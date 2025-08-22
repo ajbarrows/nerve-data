@@ -146,5 +146,5 @@ print(f"Total Subjects: {n_subjects}")
 
 
 ```{python}
-summary_table
+print(summary_table.to_markdown())
 ```

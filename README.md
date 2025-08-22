@@ -45,23 +45,7 @@ Structure:
 
     Total Subjects: 93
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-&#10;    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-&#10;    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-
-| variable | anat | dwi | fmap | func | motion | mrs |
-|----------|------|-----|------|------|--------|-----|
-| session  |      |     |      |      |        |     |
-| ses-V02  | 70   | 61  | 65   | 70   | 75     | 41  |
-| ses-V03  | 8    | 8   | 9    | 9    | 8      | 2   |
-
-</div>
+    | session   |   anat |   dwi |   fmap |   func |   motion |   mrs |
+    |:----------|-------:|------:|-------:|-------:|---------:|------:|
+    | ses-V02   |     70 |    61 |     65 |     70 |       75 |    41 |
+    | ses-V03   |      8 |     8 |      9 |      9 |        8 |     2 |

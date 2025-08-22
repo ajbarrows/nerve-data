@@ -1,6 +1,8 @@
 
 ABCD/*
+!ABCD/.gitkeep
 HBCD/*
+!HBCD/.gitkeep
 !.gitignore
 
 code/notebooks/
