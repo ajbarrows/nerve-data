@@ -80,7 +80,7 @@ def scan_bids_directory(bids_dir):
     bids_path = Path(bids_dir)
     
     # Define modalities to look for
-    modalities = ['anat', 'dwi', 'fmap', 'func', 'motion', 'mrs']
+    modalities = ['anat', 'dwi', 'fmap', 'func', 'motion', 'mrs', 'eeg']
     
     # List to store data
     data = []
@@ -140,8 +140,10 @@ def scan_bids_directory(bids_dir):
             columns='variable',
             values='count'
         )
-)
-    
+        .fillna(0)
+        .astype('int')
+    )
+
     return df, summary_table, df['subject'].nunique()
 
 
