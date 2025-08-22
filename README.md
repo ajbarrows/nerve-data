@@ -1,6 +1,12 @@
 # NERVE Lab Data Sets
 
 
+Current path for UVM VACC users: `/users/a/j/ajbarrow/scratch/data`
+
+Datasets are all [BIDS](https://bids.neuroimaging.io) compliant (at
+least in structure), with one notable exception: `.parquet` files are
+included in addition to `.tsv` files where appropriate.
+
 ## HBCD
 
 ### 1.0
