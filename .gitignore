@@ -6,3 +6,7 @@ HBCD/*
 !.gitignore
 
 code/notebooks/
+
+quarto/_site
+quarto/figures/
+quarto/scratch

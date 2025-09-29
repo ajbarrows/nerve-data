@@ -1,0 +1,175 @@
+---
+title: "Data Management Guide"
+---
+
+## Overview
+
+::: {.callout-note}
+Guiding philosophy: share data by sharing code to encourage best practices.
+:::
+
+**Goal:** Agree on a flexible, convenient way to produce collaborative, shareable data science projects.
+
+### Things you will need
+
+- an account with the [Vermont Advanced Computing Center (VACC)](https://www.uvm.edu/vacc)
+- one of the following operating systems:
+    - Linux (any distribution)
+    - macOS
+    - [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/install)
+
+
+## Accessing data stored on the VACC
+
+- UVM's high-performance computing (HPC) cluster
+    - "cluster" refers to multiple compute 'nodes' working in concert
+- Accessible primarily though [SSH](https://en.wikipedia.org/wiki/Secure_Shell)
+    - but also through a GUI ([Open OnDemand](https://www.uvm.edu/vacc/docs/start_guide/ondemand/))
+
+Once you have a VACC account, you'll want to familiarize yourself with the [documentation](https://www.uvm.edu/vacc/docs/start_guide/intro/). This documentation incldues guides for
+
+- Linux basics
+- connecting to the VACC's "login" nodes
+- SLURM -- the VACC's job submission manager
+- language-specific instructions
+- much more...
+
+I'm going to assume you've reviewed these guides and have successfully connected to a VACC login node using SSH. I have an SSH "alias" set up to make things easier:
+
+![](figures/vacc_login.png){width=60%}
+
+You can now navigate to where our in-house data sets are maintained:
+
+```
+cd /users/a/j/ajbarrow/scratch/data
+```
+
+Using basic Linux commands, we can explore the file directory:
+
+![](figures/dir_explore.png){width=60%}
+
+
+## Starting a project
+
+All successful data science projects begin with a semi-rigorous file structure[^1].
+
+Recommended reading:
+- [cookiecutter data science](https://cookiecutter-data-science.drivendata.org)
+- [kedro](https://docs.kedro.org/en/1.0.0/getting-started/course/)
+
+Note: these are opinions. They're best-practice-informed opinions, but still opinions.
+
+
+### Language-agnostic project elements (essential):
+
+```
+.
+├── data
+│   ├── processed
+│   └── raw
+├── LICENSE.md
+├── models
+├── notebooks
+├── README.md
+└── reports
+    └── figures
+```
+
+`/data` contains (1) actual data files, or (2) symbolic links to data files (more on that later). `/data/raw` is data your code hasn't touched. `/data/processed` are derivatives created within the current project.
+
+`/models` contains fitted/trained serialized model objects (e.g., Python `.pkl` or R `.rds` files)
+
+`/notebooks` contains exploratory and prototyping code written in Jupyter or R Markdown/Quarto notebooks. This is generally not where the analysis "actually happens."
+
+`/reports` contains presentation materials you intend to share (e.g., LaTeX, Quarto, .pdf, .docx)
+
+`README.md` describes essential information about the project and its data repository
+
+`LICENSE.md` is a standardized file describing how your code may be used.
+
+### R-specific additions (basic version)
+
+```
+.
+├── {project-name}.Rproj
+├── R
+│   └── {load_data}.R
+├── renv
+├── renv.lock
+```
+
+/{}.Rproj` file -- basic collection of settings interpreted by RStudio. Not strictly necessary, but handy.
+
+`/renv` and `renv.lock`  are environment files created by the package [`renv`](https://rstudio.github.io/renv/). More on virtual environments later.
+
+`/R` contains R scripts where the analysis "actually happens."
+
+
+### Python-specific additions (basic version)
+
+
+```
+.
+├── environment.yml
+├── src
+│   └── {load_data}.py
+```
+
+`/environment.yml` is a "frozen" file created by the library [`conda`](https://docs.conda.io/projects/conda/en/stable/user-guide/tasks/manage-environments.html). More on virtual environments later.
+
+`/src` contains Python scripts where the analysis "actually happens."
+
+
+## Getting data into a your `/data` directory
+
+### Working directly on the VACC
+
+If you plan to do your data cleaning, exploration, analysis, and reporting entirely on the VACC (more on this later), you can simply create a **symbolic link** between the `/data` directory in your project and the shared NERVE Lab data repository.
+A symbolic link is just like a Windows or macOS shortcut, but it's created using the terminal:
+
+`ln -s /path/to/file /path/to/symlink`
+
+To be concrete (assuming your project is caled `my_project`):
+
+```
+cd my_project
+ln -s /users/a/j/ajbarrow/scratch/data/ABCD data/raw
+```
+
+This will create a link between the repository that holds `/ABCD` and your project's `/data/raw` folder. This means that you will access data from your local `/data/raw`/ folder -- as will anyone who wants to *reproduce* your results!
+
+### Working on your local computer
+
+If you don't plan to work on the VACC directly (or if you will prototype your code on a local machine and possibly run analyses on the VACC later), you will need to copy data to your local machine [^2].
+There are several methods for doing this. In any case, I strongly recommend that you **maintain the original file structure**.
+
+#### `rsync` (recommended)
+
+Linux and macOS have a built in tool called "remote sync" ([`rsync`](https://ss64.com/bash/rsync.html)) which synchronizes file trees, often between "local" (e.g., your laptop) and "remote" (e.g., the VACC) resources.
+`rsync` commands take the form
+
+`rsync [option] source destination`
+
+I encourage you to become familiar with the various options used in `rsync`, but I will suggest a common implementation using teh `-a` ("archive") flag which contains a number of common options (e.g., ensures all subdirectories are copied, preserves symlinks, and preserves ownership and permissions), the `-v` ("verbose") flag that prints all errors and warnings, and the `-P` flag, which shows an interactive progress bar.
+
+From my local machine:
+
+```
+cd my_project
+rsync -avP \\ 
+    vacc:/users/a/j/ajbarrow/scratch/data/ABCD/6.0/dairc/rawdata/phenotype data/raw
+```
+
+**Note** The `\\` indicates a multi-line command. This is not necessary.
+
+**Other note** You will likely have to replace `vacc` with `your_netid@login.vacc.uvm.edu`.
+
+#### Open OnDemand (GUI-based alternative)
+
+In order to use Open OnDemand, you need to be on campus or connected to [UVM's VPN](https://www.uvm.edu/it/kb/article/uvm-vpn/).
+
+![](figures/ood-files.jpg){width=880%}
+
+
+[^1]: Many doomed projects also begin with semi-rigorous data structures.
+[^2]: Please do not interpret this section as a recommendation that you copy data from the VACC to your local machine.
