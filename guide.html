@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.29">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Data Management Guide – NERVE Lab Data Management</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-c6aa55ccafe579b599e1c08b0f990df4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">NERVE Lab Data Management</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./guide.html" aria-current="page"> 
+<span class="menu-text">Guide</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+    <div class="dropdown">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label=""><i class="bi bi-github"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/ajbarrows/nerve-data">
+            Data Access
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a>
+  <ul class="collapse">
+  <li><a href="#things-you-will-need" id="toc-things-you-will-need" class="nav-link" data-scroll-target="#things-you-will-need">Things you will need</a></li>
+  </ul></li>
+  <li><a href="#accessing-data-stored-on-the-vacc" id="toc-accessing-data-stored-on-the-vacc" class="nav-link" data-scroll-target="#accessing-data-stored-on-the-vacc">Accessing data stored on the VACC</a></li>
+  <li><a href="#starting-a-project" id="toc-starting-a-project" class="nav-link" data-scroll-target="#starting-a-project">Starting a project</a>
+  <ul class="collapse">
+  <li><a href="#language-agnostic-project-elements-essential" id="toc-language-agnostic-project-elements-essential" class="nav-link" data-scroll-target="#language-agnostic-project-elements-essential">Language-agnostic project elements (essential):</a></li>
+  <li><a href="#r-specific-additions-basic-version" id="toc-r-specific-additions-basic-version" class="nav-link" data-scroll-target="#r-specific-additions-basic-version">R-specific additions (basic version)</a></li>
+  <li><a href="#python-specific-additions-basic-version" id="toc-python-specific-additions-basic-version" class="nav-link" data-scroll-target="#python-specific-additions-basic-version">Python-specific additions (basic version)</a></li>
+  </ul></li>
+  <li><a href="#getting-data-into-a-your-data-directory" id="toc-getting-data-into-a-your-data-directory" class="nav-link" data-scroll-target="#getting-data-into-a-your-data-directory">Getting data into a your <code>/data</code> directory</a>
+  <ul class="collapse">
+  <li><a href="#working-directly-on-the-vacc" id="toc-working-directly-on-the-vacc" class="nav-link" data-scroll-target="#working-directly-on-the-vacc">Working directly on the VACC</a></li>
+  <li><a href="#working-on-your-local-computer" id="toc-working-on-your-local-computer" class="nav-link" data-scroll-target="#working-on-your-local-computer">Working on your local computer</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Data Management Guide</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Guiding philosophy: share data by sharing code to encourage best practices.</p>
+</div>
+</div>
+<p><strong>Goal:</strong> Agree on a flexible, convenient way to produce collaborative, shareable data science projects.</p>
+<section id="things-you-will-need" class="level3">
+<h3 class="anchored" data-anchor-id="things-you-will-need">Things you will need</h3>
+<ul>
+<li>an account with the <a href="https://www.uvm.edu/vacc">Vermont Advanced Computing Center (VACC)</a></li>
+<li>one of the following operating systems:
+<ul>
+<li>Linux (any distribution)</li>
+<li>macOS</li>
+<li><a href="https://learn.microsoft.com/en-us/windows/wsl/install">Windows Subsystem for Linux (WSL)</a></li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="accessing-data-stored-on-the-vacc" class="level2">
+<h2 class="anchored" data-anchor-id="accessing-data-stored-on-the-vacc">Accessing data stored on the VACC</h2>
+<ul>
+<li>UVM’s high-performance computing (HPC) cluster
+<ul>
+<li>“cluster” refers to multiple compute ‘nodes’ working in concert</li>
+</ul></li>
+<li>Accessible primarily though <a href="https://en.wikipedia.org/wiki/Secure_Shell">SSH</a>
+<ul>
+<li>but also through a GUI (<a href="https://www.uvm.edu/vacc/docs/start_guide/ondemand/">Open OnDemand</a>)</li>
+</ul></li>
+</ul>
+<p>Once you have a VACC account, you’ll want to familiarize yourself with the <a href="https://www.uvm.edu/vacc/docs/start_guide/intro/">documentation</a>. This documentation incldues guides for</p>
+<ul>
+<li>Linux basics</li>
+<li>connecting to the VACC’s “login” nodes</li>
+<li>SLURM – the VACC’s job submission manager</li>
+<li>language-specific instructions</li>
+<li>much more…</li>
+</ul>
+<p>I’m going to assume you’ve reviewed these guides and have successfully connected to a VACC login node using SSH. I have an SSH “alias” set up to make things easier:</p>
+<p><img src="figures/vacc_login.png" class="img-fluid" style="width:60.0%"></p>
+<p>You can now navigate to where our in-house data sets are maintained:</p>
+<pre><code>cd /users/a/j/ajbarrow/scratch/data</code></pre>
+<p>Using basic Linux commands, we can explore the file directory:</p>
+<p><img src="figures/dir_explore.png" class="img-fluid" style="width:60.0%"></p>
+</section>
+<section id="starting-a-project" class="level2">
+<h2 class="anchored" data-anchor-id="starting-a-project">Starting a project</h2>
+<p>All successful data science projects begin with a semi-rigorous file structure<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<p>Recommended reading: - <a href="https://cookiecutter-data-science.drivendata.org">cookiecutter data science</a> - <a href="https://docs.kedro.org/en/1.0.0/getting-started/course/">kedro</a></p>
+<p>Note: these are opinions. They’re best-practice-informed opinions, but still opinions.</p>
+<section id="language-agnostic-project-elements-essential" class="level3">
+<h3 class="anchored" data-anchor-id="language-agnostic-project-elements-essential">Language-agnostic project elements (essential):</h3>
+<pre><code>.
+├── data
+│&nbsp;&nbsp; ├── processed
+│&nbsp;&nbsp; └── raw
+├── LICENSE.md
+├── models
+├── notebooks
+├── README.md
+└── reports
+    └── figures</code></pre>
+<p><code>/data</code> contains (1) actual data files, or (2) symbolic links to data files (more on that later). <code>/data/raw</code> is data your code hasn’t touched. <code>/data/processed</code> are derivatives created within the current project.</p>
+<p><code>/models</code> contains fitted/trained serialized model objects (e.g., Python <code>.pkl</code> or R <code>.rds</code> files)</p>
+<p><code>/notebooks</code> contains exploratory and prototyping code written in Jupyter or R Markdown/Quarto notebooks. This is generally not where the analysis “actually happens.”</p>
+<p><code>/reports</code> contains presentation materials you intend to share (e.g., LaTeX, Quarto, .pdf, .docx)</p>
+<p><code>README.md</code> describes essential information about the project and its data repository</p>
+<p><code>LICENSE.md</code> is a standardized file describing how your code may be used.</p>
+</section>
+<section id="r-specific-additions-basic-version" class="level3">
+<h3 class="anchored" data-anchor-id="r-specific-additions-basic-version">R-specific additions (basic version)</h3>
+<pre><code>.
+├── {project-name}.Rproj
+├── R
+│&nbsp;&nbsp; └── {load_data}.R
+├── renv
+├── renv.lock</code></pre>
+<p>/{}.Rproj` file – basic collection of settings interpreted by RStudio. Not strictly necessary, but handy.</p>
+<p><code>/renv</code> and <code>renv.lock</code> are environment files created by the package <a href="https://rstudio.github.io/renv/"><code>renv</code></a>. More on virtual environments later.</p>
+<p><code>/R</code> contains R scripts where the analysis “actually happens.”</p>
+</section>
+<section id="python-specific-additions-basic-version" class="level3">
+<h3 class="anchored" data-anchor-id="python-specific-additions-basic-version">Python-specific additions (basic version)</h3>
+<pre><code>.
+├── environment.yml
+├── src
+│&nbsp;&nbsp; └── {load_data}.py</code></pre>
+<p><code>/environment.yml</code> is a “frozen” file created by the library <a href="https://docs.conda.io/projects/conda/en/stable/user-guide/tasks/manage-environments.html"><code>conda</code></a>. More on virtual environments later.</p>
+<p><code>/src</code> contains Python scripts where the analysis “actually happens.”</p>
+</section>
+</section>
+<section id="getting-data-into-a-your-data-directory" class="level2">
+<h2 class="anchored" data-anchor-id="getting-data-into-a-your-data-directory">Getting data into a your <code>/data</code> directory</h2>
+<section id="working-directly-on-the-vacc" class="level3">
+<h3 class="anchored" data-anchor-id="working-directly-on-the-vacc">Working directly on the VACC</h3>
+<p>If you plan to do your data cleaning, exploration, analysis, and reporting entirely on the VACC (more on this later), you can simply create a <strong>symbolic link</strong> between the <code>/data</code> directory in your project and the shared NERVE Lab data repository. A symbolic link is just like a Windows or macOS shortcut, but it’s created using the terminal:</p>
+<p><code>ln -s /path/to/file /path/to/symlink</code></p>
+<p>To be concrete (assuming your project is caled <code>my_project</code>):</p>
+<pre><code>cd my_project
+ln -s /users/a/j/ajbarrow/scratch/data/ABCD data/raw</code></pre>
+<p>This will create a link between the repository that holds <code>/ABCD</code> and your project’s <code>/data/raw</code> folder. This means that you will access data from your local <code>/data/raw</code>/ folder – as will anyone who wants to <em>reproduce</em> your results!</p>
+</section>
+<section id="working-on-your-local-computer" class="level3">
+<h3 class="anchored" data-anchor-id="working-on-your-local-computer">Working on your local computer</h3>
+<p>If you don’t plan to work on the VACC directly (or if you will prototype your code on a local machine and possibly run analyses on the VACC later), you will need to copy data to your local machine <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. There are several methods for doing this. In any case, I strongly recommend that you <strong>maintain the original file structure</strong>.</p>
+<section id="rsync-recommended" class="level4">
+<h4 class="anchored" data-anchor-id="rsync-recommended"><code>rsync</code> (recommended)</h4>
+<p>Linux and macOS have a built in tool called “remote sync” (<a href="https://ss64.com/bash/rsync.html"><code>rsync</code></a>) which synchronizes file trees, often between “local” (e.g., your laptop) and “remote” (e.g., the VACC) resources. <code>rsync</code> commands take the form</p>
+<p><code>rsync [option] source destination</code></p>
+<p>I encourage you to become familiar with the various options used in <code>rsync</code>, but I will suggest a common implementation using teh <code>-a</code> (“archive”) flag which contains a number of common options (e.g., ensures all subdirectories are copied, preserves symlinks, and preserves ownership and permissions), the <code>-v</code> (“verbose”) flag that prints all errors and warnings, and the <code>-P</code> flag, which shows an interactive progress bar.</p>
+<p>From my local machine:</p>
+<pre><code>cd my_project
+rsync -avP \\ 
+    vacc:/users/a/j/ajbarrow/scratch/data/ABCD/6.0/dairc/rawdata/phenotype data/raw</code></pre>
+<p><strong>Note</strong> The <code>\\</code> indicates a multi-line command. This is not necessary.</p>
+<p><strong>Other note</strong> You will likely have to replace <code>vacc</code> with <code>your_netid@login.vacc.uvm.edu</code>.</p>
+</section>
+<section id="open-ondemand-gui-based-alternative" class="level4">
+<h4 class="anchored" data-anchor-id="open-ondemand-gui-based-alternative">Open OnDemand (GUI-based alternative)</h4>
+<p>In order to use Open OnDemand, you need to be on campus or connected to <a href="https://www.uvm.edu/it/kb/article/uvm-vpn/">UVM’s VPN</a>.</p>
+<p><img src="figures/ood-files.jpg" class="img-fluid" style="width:880.0%"></p>
+
+
+</section>
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Many doomed projects also begin with semi-rigorous data structures.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Please do not interpret this section as a recommendation that you copy data from the VACC to your local machine.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/ajbarrows\.github\.io\/nerve-data\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
