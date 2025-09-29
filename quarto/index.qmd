@@ -10,9 +10,7 @@ This website is meant to serve as an introduction to:
 - data science project best practices
 - doing reproducible science.
 
-This guide will reference [instructions](https://github.com/ajbarrows/abcd-puberty) in this repository.
-
-This guide also presumes the following:
+This guide presumes the following:
 
 - you have an account with the [Vermont Advanced Computing Center (VACC)](https://www.uvm.edu/vacc)
 - you are using one of the following operating systems:
