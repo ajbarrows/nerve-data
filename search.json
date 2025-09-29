@@ -4,14 +4,14 @@
     "href": "index.html",
     "title": "NERVE Lab Data Management Guide",
     "section": "",
-    "text": "This website is meant to serve as an introduction to:\n\nloading and analyzing large neuroimaging datasets at UVM\ndata science project best practices\ndoing reproducible science.\n\nThis guide will reference instructions in this repository.\nThis guide also presumes the following:\n\nyou have an account with the Vermont Advanced Computing Center (VACC)\nyou are using one of the following operating systems:\n\nLinux (any distribution)\nmacOS\nWindows Subsystem for Linux (WSL)"
+    "text": "This website is meant to serve as an introduction to:\n\nloading and analyzing large neuroimaging datasets at UVM\ndata science project best practices\ndoing reproducible science.\n\nThis guide presumes the following:\n\nyou have an account with the Vermont Advanced Computing Center (VACC)\nyou are using one of the following operating systems:\n\nLinux (any distribution)\nmacOS\nWindows Subsystem for Linux (WSL)"
   },
   {
     "objectID": "index.html#introduction",
     "href": "index.html#introduction",
     "title": "NERVE Lab Data Management Guide",
     "section": "",
-    "text": "This website is meant to serve as an introduction to:\n\nloading and analyzing large neuroimaging datasets at UVM\ndata science project best practices\ndoing reproducible science.\n\nThis guide will reference instructions in this repository.\nThis guide also presumes the following:\n\nyou have an account with the Vermont Advanced Computing Center (VACC)\nyou are using one of the following operating systems:\n\nLinux (any distribution)\nmacOS\nWindows Subsystem for Linux (WSL)"
+    "text": "This website is meant to serve as an introduction to:\n\nloading and analyzing large neuroimaging datasets at UVM\ndata science project best practices\ndoing reproducible science.\n\nThis guide presumes the following:\n\nyou have an account with the Vermont Advanced Computing Center (VACC)\nyou are using one of the following operating systems:\n\nLinux (any distribution)\nmacOS\nWindows Subsystem for Linux (WSL)"
   },
   {
     "objectID": "guide.html",
