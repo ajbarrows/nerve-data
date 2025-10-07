@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>About – NERVE Lab Data Management</title>
+<title>Accessing UVM-Hosted Data – NERVE Lab Data Management</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -39,7 +39,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-c6aa55ccafe579b599e1c08b0f990df4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-46c2108cb5970b202887687d23fed73e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -72,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-sidebar docked nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -94,29 +94,95 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
-<span class="menu-text">About</span></a>
+    <a class="nav-link active" href="./guide.html" aria-current="page"> 
+<span class="menu-text">Guide</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
+    <div class="dropdown">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label=""><i class="bi bi-github"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/ajbarrows/nerve-data">
+            Data Access
+            </a>
+          </li>
+      </ul>
+    </div>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./access_data.html">Accessing UVM-Hosted Data</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Management and Analysis Guides</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./access_data.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Accessing UVM-Hosted Data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./using_git.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Git and GitHub</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a>
+  <ul class="collapse">
+  <li><a href="#things-you-will-need" id="toc-things-you-will-need" class="nav-link" data-scroll-target="#things-you-will-need">Things you will need</a></li>
+  </ul></li>
+  <li><a href="#accessing-data-stored-on-the-vacc" id="toc-accessing-data-stored-on-the-vacc" class="nav-link" data-scroll-target="#accessing-data-stored-on-the-vacc">Accessing data stored on the VACC</a></li>
+  <li><a href="#starting-a-project" id="toc-starting-a-project" class="nav-link" data-scroll-target="#starting-a-project">Starting a project</a>
+  <ul class="collapse">
+  <li><a href="#language-agnostic-project-elements-essential" id="toc-language-agnostic-project-elements-essential" class="nav-link" data-scroll-target="#language-agnostic-project-elements-essential">Language-agnostic project elements (essential):</a></li>
+  <li><a href="#r-specific-additions-basic-version" id="toc-r-specific-additions-basic-version" class="nav-link" data-scroll-target="#r-specific-additions-basic-version">R-specific additions (basic version)</a></li>
+  <li><a href="#python-specific-additions-basic-version" id="toc-python-specific-additions-basic-version" class="nav-link" data-scroll-target="#python-specific-additions-basic-version">Python-specific additions (basic version)</a></li>
+  </ul></li>
+  <li><a href="#getting-data-into-a-your-data-directory" id="toc-getting-data-into-a-your-data-directory" class="nav-link" data-scroll-target="#getting-data-into-a-your-data-directory">Getting data into a your <code>/data</code> directory</a>
+  <ul class="collapse">
+  <li><a href="#working-directly-on-the-vacc" id="toc-working-directly-on-the-vacc" class="nav-link" data-scroll-target="#working-directly-on-the-vacc">Working directly on the VACC</a></li>
+  <li><a href="#working-on-your-local-computer" id="toc-working-on-your-local-computer" class="nav-link" data-scroll-target="#working-on-your-local-computer">Working on your local computer</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About</h1>
+<h1 class="title">Accessing UVM-Hosted Data</h1>
 </div>
 
 
@@ -133,11 +199,152 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>About this site</p>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Guiding philosophy: share data by sharing code to encourage best practices.</p>
+</div>
+</div>
+<p><strong>Goal:</strong> Agree on a flexible, convenient way to produce collaborative, shareable data science projects.</p>
+<section id="things-you-will-need" class="level3">
+<h3 class="anchored" data-anchor-id="things-you-will-need">Things you will need</h3>
+<ul>
+<li>an account with the <a href="https://www.uvm.edu/vacc">Vermont Advanced Computing Center (VACC)</a></li>
+<li>one of the following operating systems:
+<ul>
+<li>Linux (any distribution)</li>
+<li>macOS</li>
+<li><a href="https://learn.microsoft.com/en-us/windows/wsl/install">Windows Subsystem for Linux (WSL)</a></li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="accessing-data-stored-on-the-vacc" class="level2">
+<h2 class="anchored" data-anchor-id="accessing-data-stored-on-the-vacc">Accessing data stored on the VACC</h2>
+<ul>
+<li>UVM’s high-performance computing (HPC) cluster
+<ul>
+<li>“cluster” refers to multiple compute ‘nodes’ working in concert</li>
+</ul></li>
+<li>Accessible primarily though <a href="https://en.wikipedia.org/wiki/Secure_Shell">SSH</a>
+<ul>
+<li>but also through a GUI (<a href="https://www.uvm.edu/vacc/docs/start_guide/ondemand/">Open OnDemand</a>)</li>
+</ul></li>
+</ul>
+<p>Once you have a VACC account, you’ll want to familiarize yourself with the <a href="https://www.uvm.edu/vacc/docs/start_guide/intro/">documentation</a>. This documentation incldues guides for</p>
+<ul>
+<li>Linux basics</li>
+<li>connecting to the VACC’s “login” nodes</li>
+<li>SLURM – the VACC’s job submission manager</li>
+<li>language-specific instructions</li>
+<li>much more…</li>
+</ul>
+<p>I’m going to assume you’ve reviewed these guides and have successfully connected to a VACC login node using SSH. I have an SSH “alias” set up to make things easier:</p>
+<p><img src="figures/vacc_login.png" class="img-fluid" style="width:60.0%"></p>
+<p>You can now navigate to where our in-house data sets are maintained:</p>
+<pre><code>cd /users/a/j/ajbarrow/scratch/data</code></pre>
+<p>Using basic Linux commands, we can explore the file directory:</p>
+<p><img src="figures/dir_explore.png" class="img-fluid" style="width:60.0%"></p>
+</section>
+<section id="starting-a-project" class="level2">
+<h2 class="anchored" data-anchor-id="starting-a-project">Starting a project</h2>
+<p>All successful data science projects begin with a semi-rigorous file structure<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<p>Recommended reading: - <a href="https://cookiecutter-data-science.drivendata.org">cookiecutter data science</a> - <a href="https://docs.kedro.org/en/1.0.0/getting-started/course/">kedro</a></p>
+<p>Note: these are opinions. They’re best-practice-informed opinions, but still opinions.</p>
+<section id="language-agnostic-project-elements-essential" class="level3">
+<h3 class="anchored" data-anchor-id="language-agnostic-project-elements-essential">Language-agnostic project elements (essential):</h3>
+<pre><code>.
+├── data
+│&nbsp;&nbsp; ├── processed
+│&nbsp;&nbsp; └── raw
+├── LICENSE.md
+├── models
+├── notebooks
+├── README.md
+└── reports
+    └── figures</code></pre>
+<p><code>/data</code> contains (1) actual data files, or (2) symbolic links to data files (more on that later). <code>/data/raw</code> is data your code hasn’t touched. <code>/data/processed</code> are derivatives created within the current project.</p>
+<p><code>/models</code> contains fitted/trained serialized model objects (e.g., Python <code>.pkl</code> or R <code>.rds</code> files)</p>
+<p><code>/notebooks</code> contains exploratory and prototyping code written in Jupyter or R Markdown/Quarto notebooks. This is generally not where the analysis “actually happens.”</p>
+<p><code>/reports</code> contains presentation materials you intend to share (e.g., LaTeX, Quarto, .pdf, .docx)</p>
+<p><code>README.md</code> describes essential information about the project and its data repository</p>
+<p><code>LICENSE.md</code> is a standardized file describing how your code may be used.</p>
+</section>
+<section id="r-specific-additions-basic-version" class="level3">
+<h3 class="anchored" data-anchor-id="r-specific-additions-basic-version">R-specific additions (basic version)</h3>
+<pre><code>.
+├── {project-name}.Rproj
+├── R
+│&nbsp;&nbsp; └── {load_data}.R
+├── renv
+├── renv.lock</code></pre>
+<p>/{}.Rproj` file – basic collection of settings interpreted by RStudio. Not strictly necessary, but handy.</p>
+<p><code>/renv</code> and <code>renv.lock</code> are environment files created by the package <a href="https://rstudio.github.io/renv/"><code>renv</code></a>. More on virtual environments later.</p>
+<p><code>/R</code> contains R scripts where the analysis “actually happens.”</p>
+</section>
+<section id="python-specific-additions-basic-version" class="level3">
+<h3 class="anchored" data-anchor-id="python-specific-additions-basic-version">Python-specific additions (basic version)</h3>
+<pre><code>.
+├── environment.yml
+├── src
+│&nbsp;&nbsp; └── {load_data}.py</code></pre>
+<p><code>/environment.yml</code> is a “frozen” file created by the library <a href="https://docs.conda.io/projects/conda/en/stable/user-guide/tasks/manage-environments.html"><code>conda</code></a>. More on virtual environments later.</p>
+<p><code>/src</code> contains Python scripts where the analysis “actually happens.”</p>
+</section>
+</section>
+<section id="getting-data-into-a-your-data-directory" class="level2">
+<h2 class="anchored" data-anchor-id="getting-data-into-a-your-data-directory">Getting data into a your <code>/data</code> directory</h2>
+<section id="working-directly-on-the-vacc" class="level3">
+<h3 class="anchored" data-anchor-id="working-directly-on-the-vacc">Working directly on the VACC</h3>
+<p>If you plan to do your data cleaning, exploration, analysis, and reporting entirely on the VACC (more on this later), you can simply create a <strong>symbolic link</strong> between the <code>/data</code> directory in your project and the shared NERVE Lab data repository. A symbolic link is just like a Windows or macOS shortcut, but it’s created using the terminal:</p>
+<p><code>ln -s /path/to/file /path/to/symlink</code></p>
+<p>To be concrete (assuming your project is caled <code>my_project</code>):</p>
+<pre><code>cd my_project
+ln -s /users/a/j/ajbarrow/scratch/data/ABCD data/raw</code></pre>
+<p>This will create a link between the repository that holds <code>/ABCD</code> and your project’s <code>/data/raw</code> folder. This means that you will access data from your local <code>/data/raw</code>/ folder – as will anyone who wants to <em>reproduce</em> your results!</p>
+</section>
+<section id="working-on-your-local-computer" class="level3">
+<h3 class="anchored" data-anchor-id="working-on-your-local-computer">Working on your local computer</h3>
+<p>If you don’t plan to work on the VACC directly (or if you will prototype your code on a local machine and possibly run analyses on the VACC later), you will need to copy data to your local machine <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. There are several methods for doing this. In any case, I strongly recommend that you <strong>maintain the original file structure</strong>.</p>
+<section id="rsync-recommended" class="level4">
+<h4 class="anchored" data-anchor-id="rsync-recommended"><code>rsync</code> (recommended)</h4>
+<p>Linux and macOS have a built in tool called “remote sync” (<a href="https://ss64.com/bash/rsync.html"><code>rsync</code></a>) which synchronizes file trees, often between “local” (e.g., your laptop) and “remote” (e.g., the VACC) resources. <code>rsync</code> commands take the form</p>
+<p><code>rsync [option] source destination</code></p>
+<p>I encourage you to become familiar with the various options used in <code>rsync</code>, but I will suggest a common implementation using teh <code>-a</code> (“archive”) flag which contains a number of common options (e.g., ensures all subdirectories are copied, preserves symlinks, and preserves ownership and permissions), the <code>-v</code> (“verbose”) flag that prints all errors and warnings, and the <code>-P</code> flag, which shows an interactive progress bar.</p>
+<p>From my local machine:</p>
+<pre><code>cd my_project
+rsync -avP \\ 
+    vacc:/users/a/j/ajbarrow/scratch/data/ABCD/6.0/dairc/rawdata/phenotype data/raw</code></pre>
+<p><strong>Note</strong> The <code>\\</code> indicates a multi-line command. This is not necessary.</p>
+<p><strong>Other note</strong> You will likely have to replace <code>vacc</code> with <code>your_netid@login.vacc.uvm.edu</code>.</p>
+</section>
+<section id="open-ondemand-gui-based-alternative" class="level4">
+<h4 class="anchored" data-anchor-id="open-ondemand-gui-based-alternative">Open OnDemand (GUI-based alternative)</h4>
+<p>In order to use Open OnDemand, you need to be on campus or connected to <a href="https://www.uvm.edu/it/kb/article/uvm-vpn/">UVM’s VPN</a>.</p>
+<p><img src="figures/ood-files.jpg" class="img-fluid" style="width:880.0%"></p>
 
 
+</section>
+</section>
+</section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Many doomed projects also begin with semi-rigorous data structures.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Please do not interpret this section as a recommendation that you copy data from the VACC to your local machine.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -210,7 +417,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/ajbarrows\.github\.io\/nerve-data\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

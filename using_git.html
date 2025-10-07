@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2025-10-07">
 
-<title>Data Management Guide – NERVE Lab Data Management</title>
+<title>Git and GitHub – NERVE Lab Data Management</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -39,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-c6aa55ccafe579b599e1c08b0f990df4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-46c2108cb5970b202887687d23fed73e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -67,12 +103,13 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<style>html{ scroll-behavior: smooth; }</style>
 
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light">
+<body class="nav-sidebar docked nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -93,17 +130,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-data-management-guide" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Data Management Guide</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-data-management-guide">    
-        <li>
-    <a class="dropdown-item" href="./overview.html">
- <span class="dropdown-text">Overview</span></a>
+  <li class="nav-item">
+    <a class="nav-link active" href="./guide.html" aria-current="page"> 
+<span class="menu-text">Guide</span></a>
   </li>  
-    </ul>
-  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -125,7 +155,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./overview.html">Overview</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./using_git.html">Git and GitHub</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -134,13 +164,25 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./overview.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Overview</span></a>
+  <a href="./guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Management and Analysis Guides</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./access_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Accessing UVM-Hosted Data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./using_git.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Git and GitHub</span></a>
   </div>
 </li>
     </ul>
@@ -152,11 +194,17 @@ ul.task-list li input[type="checkbox"] {
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
-  <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a>
   <ul class="collapse">
-  <li><a href="#concepts" id="toc-concepts" class="nav-link" data-scroll-target="#concepts">Concepts</a></li>
-  </ul></li>
+  <li><a href="#what-is-git" id="toc-what-is-git" class="nav-link active" data-scroll-target="#what-is-git">What is Git?</a></li>
+  <li><a href="#what-is-github" id="toc-what-is-github" class="nav-link" data-scroll-target="#what-is-github">What is GitHub?</a></li>
+  <li><a href="#git-basics" id="toc-git-basics" class="nav-link" data-scroll-target="#git-basics">Git Basics</a></li>
+  <li><a href="#essential-commands" id="toc-essential-commands" class="nav-link" data-scroll-target="#essential-commands">Essential Commands</a></li>
+  <li><a href="#github-for-collaboration" id="toc-github-for-collaboration" class="nav-link" data-scroll-target="#github-for-collaboration">GitHub for Collaboration</a></li>
+  <li><a href="#data-science-specific-considerations" id="toc-data-science-specific-considerations" class="nav-link" data-scroll-target="#data-science-specific-considerations">Data Science Specific Considerations</a></li>
+  <li><a href="#hands-on-practice" id="toc-hands-on-practice" class="nav-link" data-scroll-target="#hands-on-practice">Hands-On Practice</a></li>
+  <li><a href="#best-practices" id="toc-best-practices" class="nav-link" data-scroll-target="#best-practices">Best Practices</a></li>
+  <li><a href="#resources-for-learning-more" id="toc-resources-for-learning-more" class="nav-link" data-scroll-target="#resources-for-learning-more">Resources for Learning More</a></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways">Key Takeaways</a></li>
   </ul>
 </nav>
     </div>
@@ -165,7 +213,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Data Management Guide</h1>
+<h1 class="title">Git and GitHub</h1>
+<p class="subtitle lead">Version Control for Analysis Projects</p>
 </div>
 
 
@@ -173,6 +222,12 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 7, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -182,8 +237,6 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -194,17 +247,264 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Guiding philosophy: share data by sharing code to encourage best practices.</p>
+<p>My LLM friend Claude and I made this together.</p>
 </div>
 </div>
-<section id="concepts" class="level3">
-<h3 class="anchored" data-anchor-id="concepts">Concepts</h3>
+<section id="what-is-git" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-git">What is Git?</h2>
+<p><strong>Git</strong> is a version control system that tracks changes in your files. It works locally on your computer and creates snapshots (called commits) of your work. Think of it like “track changes” for code and data projects, but much more powerful.</p>
+</section>
+<section id="what-is-github" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-github">What is GitHub?</h2>
+<p><strong>GitHub</strong> is a remote hosting platform for Git repositories. It provides:</p>
 <ul>
-<li>Standardized Data Structure</li>
+<li>Backup in the cloud</li>
+<li>Tools to share and collaborate</li>
+<li>A portfolio of your work</li>
+<li>Project management features</li>
+</ul>
+<p><strong>Key distinction:</strong> Git runs locally on your machine, while GitHub is the remote service where you store your repositories.</p>
+</section>
+<section id="git-basics" class="level2">
+<h2 class="anchored" data-anchor-id="git-basics">Git Basics</h2>
+<section id="core-concepts" class="level3">
+<h3 class="anchored" data-anchor-id="core-concepts">Core Concepts</h3>
+<p><strong>Repository (repo):</strong> A project folder that Git is tracking. Contains all your files plus a hidden <code>.git</code> directory with the version history.</p>
+<p><strong>Commit:</strong> A snapshot of your work at a specific point in time. Each commit has a unique ID and a message describing what changed.</p>
+<p><strong>Branch:</strong> A separate line of development. We’ll keep things simple with just the main branch for now.</p>
+</section>
+<section id="what-git-tracks" class="level3">
+<h3 class="anchored" data-anchor-id="what-git-tracks">What Git Tracks</h3>
+<p>Git is great for tracking certain types of files:</p>
+<p><strong>✅ DO track:</strong></p>
+<ul>
+<li>Code files (<code>.py</code>, <code>.R</code>, <code>.jl</code>)</li>
+<li>Notebooks (<code>.ipynb</code>, <code>.qmd</code>, <code>.Rmd</code>)</li>
+<li>Documentation (<code>README.md</code>, notes)</li>
+<li>Configuration files (<code>requirements.txt</code>, <code>config.yaml</code>)</li>
+</ul>
+<p><strong>❌ DON’T track:</strong></p>
+<ul>
+<li>Large datasets (use data storage solutions instead)</li>
+<li>API keys and credentials (use environment variables)</li>
+<li>Generated outputs (plots, HTML reports)</li>
+<li>Binary files that change frequently</li>
+</ul>
+</section>
+<section id="basic-workflow" class="level3">
+<h3 class="anchored" data-anchor-id="basic-workflow">Basic Workflow</h3>
+<p>The fundamental Git workflow follows these steps:</p>
+<ol type="1">
+<li><strong>Modify</strong> files in your project</li>
+<li><strong>Stage</strong> changes with <code>git add</code></li>
+<li><strong>Commit</strong> changes with <code>git commit</code></li>
+<li><strong>Repeat!</strong></li>
+</ol>
+<p>This pattern becomes second nature once you practice it a few times.</p>
+</section>
+</section>
+<section id="essential-commands" class="level2">
+<h2 class="anchored" data-anchor-id="essential-commands">Essential Commands</h2>
+<p>Here are the 5 commands you need to get started with Git:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Start tracking a project</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Stage changes (prepare files for commit)</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add filename.py</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Save a snapshot with a message</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Clear message about what changed"</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Check what's changed</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># View commit history</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="example-creating-your-first-repository" class="level3">
+<h3 class="anchored" data-anchor-id="example-creating-your-first-repository">Example: Creating Your First Repository</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create and navigate to a new project</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init my-analysis</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> my-analysis</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a simple analysis file</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># (create your notebook or script here)</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Stage and commit</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add analysis.ipynb</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Initial analysis of dataset X"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="github-for-collaboration" class="level2">
+<h2 class="anchored" data-anchor-id="github-for-collaboration">GitHub for Collaboration</h2>
+<section id="connecting-local-and-remote" class="level3">
+<h3 class="anchored" data-anchor-id="connecting-local-and-remote">Connecting Local and Remote</h3>
+<p>Once you have a local Git repository, you can connect it to GitHub to back it up and share it with others.</p>
+<p><strong>Two new commands:</strong></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Send your commits to GitHub</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the latest changes from GitHub</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="typical-workflow-with-github" class="level3">
+<h3 class="anchored" data-anchor-id="typical-workflow-with-github">Typical Workflow with GitHub</h3>
+<ol type="1">
+<li>Create a repository on GitHub</li>
+<li>Connect your local repository to GitHub</li>
+<li>Push your work to the remote</li>
+<li>Collaborate with others who can clone or contribute</li>
+<li>Pull their changes to stay up to date</li>
+</ol>
+</section>
+<section id="pushing-to-github" class="level3">
+<h3 class="anchored" data-anchor-id="pushing-to-github">Pushing to GitHub</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Connect to GitHub (one time setup)</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin https://github.com/username/repo.git</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Push your commits</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>After pushing, anyone with access can view and use your analysis through GitHub’s web interface.</p>
+</section>
+</section>
+<section id="data-science-specific-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="data-science-specific-considerations">Data Science Specific Considerations</h2>
+<section id="what-to-commit" class="level3">
+<h3 class="anchored" data-anchor-id="what-to-commit">What to Commit</h3>
+<p>For data science projects, make sure to include:</p>
+<ul>
+<li>Analysis scripts (<code>.py</code>, <code>.R</code>, <code>.jl</code>)</li>
+<li>Jupyter notebooks or Quarto documents</li>
+<li>Dependency files (<code>requirements.txt</code>, <code>renv.lock</code>, <code>environment.yml</code>)</li>
+<li><code>README.md</code> with project description and setup instructions</li>
+<li>Documentation and notes</li>
+</ul>
+</section>
+<section id="what-not-to-commit" class="level3">
+<h3 class="anchored" data-anchor-id="what-not-to-commit">What NOT to Commit</h3>
+<p>Use a <code>.gitignore</code> file to exclude:</p>
+<ul>
+<li><strong>Data files</strong> (<code>.csv</code>, <code>.parquet</code>, <code>.xlsx</code>) - usually too large for Git</li>
+<li><strong>Credentials</strong> (<code>.env</code> files, API keys, passwords)</li>
+<li><strong>Output files</strong> (plots, HTML reports, model files)</li>
+</ul>
+</section>
+<section id="the-.gitignore-file" class="level3">
+<h3 class="anchored" data-anchor-id="the-.gitignore-file">The .gitignore File</h3>
+<p>Create a <code>.gitignore</code> file in your repository root:</p>
+<pre><code># Data
+*.csv
+*.parquet
+*.xlsx
+data/
+raw_data/
+
+# Credentials
+.env
+secrets.json
+.Renviron
+
+# Outputs
+*.html
+*.png
+*.pdf
+figures/
+output/
+
+# Python
+__pycache__/
+venv/
+*.pyc
+
+# R
+.Rproj.user/
+.Rhistory
+.RData
+
+# Jupyter
+.ipynb_checkpoints/</code></pre>
+</section>
+<section id="working-with-jupyter-notebooks" class="level3">
+<h3 class="anchored" data-anchor-id="working-with-jupyter-notebooks">Working with Jupyter Notebooks</h3>
+<p>Jupyter notebooks can be tricky with version control because they contain outputs and metadata that change frequently.</p>
+<p><strong>Best practices:</strong></p>
+<ul>
+<li>Clear outputs before committing: <code>Cell → All Output → Clear</code></li>
+<li>Use tools like <code>nbstripout</code> to automatically strip outputs</li>
+<li>Consider using Quarto (<code>.qmd</code>) files instead - they’re plain text and version control friendly</li>
+<li>Review diffs carefully on GitHub to see what actually changed</li>
+</ul>
+</section>
+</section>
+<section id="hands-on-practice" class="level2">
+<h2 class="anchored" data-anchor-id="hands-on-practice">Hands-On Practice</h2>
+<p>To solidify these concepts, try this exercise:</p>
+<ol type="1">
+<li>Create a new directory for a simple analysis project</li>
+<li>Initialize Git with <code>git init</code></li>
+<li>Create a basic notebook or script with some analysis</li>
+<li>Make your first commit</li>
+<li>Make a change to your code and commit again</li>
+<li>Create a repository on GitHub</li>
+<li>Push your local work to GitHub</li>
+</ol>
+<p><strong>Bonus:</strong> Add a <code>.gitignore</code> file appropriate for your project.</p>
+</section>
+<section id="best-practices" class="level2">
+<h2 class="anchored" data-anchor-id="best-practices">Best Practices</h2>
+<section id="commit-messages" class="level3">
+<h3 class="anchored" data-anchor-id="commit-messages">Commit Messages</h3>
+<p>Write clear, descriptive commit messages that explain <strong>what</strong> changed and <strong>why</strong>.</p>
+<p><strong>Good examples:</strong></p>
+<ul>
+<li><code>"Add data cleaning function for missing values"</code></li>
+<li><code>"Fix bug in correlation calculation"</code></li>
+<li><code>"Update visualization to use seaborn style"</code></li>
+</ul>
+<p><strong>Bad examples:</strong></p>
+<ul>
+<li><code>"updates"</code></li>
+<li><code>"fixed stuff"</code></li>
+<li><code>"asdfasdf"</code></li>
+</ul>
+</section>
+<section id="commit-frequency" class="level3">
+<h3 class="anchored" data-anchor-id="commit-frequency">Commit Frequency</h3>
+<blockquote class="blockquote">
+<p><strong>Commit early, commit often</strong></p>
+</blockquote>
+<p>Make small, focused commits rather than large ones that change many things. This makes it easier to:</p>
+<ul>
+<li>Understand what changed</li>
+<li>Find bugs by reviewing specific commits</li>
+<li>Revert changes if something breaks</li>
+</ul>
+</section>
+<section id="branching-advanced" class="level3">
+<h3 class="anchored" data-anchor-id="branching-advanced">Branching (Advanced)</h3>
+<p>As you get more comfortable, explore branches for:</p>
+<ul>
+<li>Testing new features without breaking your main analysis</li>
+<li>Collaborating with others on different aspects</li>
+<li>Keeping stable and experimental work separate</li>
+</ul>
+</section>
+</section>
+<section id="resources-for-learning-more" class="level2">
+<h2 class="anchored" data-anchor-id="resources-for-learning-more">Resources for Learning More</h2>
+<ul>
+<li><a href="https://git-scm.com/doc">Git Documentation</a> - Official Git documentation</li>
+<li><a href="https://skills.github.com/">GitHub Skills</a> - Interactive tutorials</li>
+</ul>
+</section>
+<section id="key-takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaways">Key Takeaways</h2>
+<ul>
+<li><strong>Version control is essential</strong> for reproducible data science</li>
+<li><strong>Start simple</strong> with the basic commands: init, add, commit, push, pull</li>
+<li><strong>Commit frequently</strong> with clear messages</li>
 </ul>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -280,7 +580,7 @@ Note
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/ajbarrows\.github\.io\/nerve-data\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -612,4 +912,5 @@ Note
 
 
 
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
