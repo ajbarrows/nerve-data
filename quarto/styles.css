@@ -1,1 +1,4 @@
 /* css styles */
+.sidebar-item-text.sidebar-link.text-start {
+    font-weight: bold;
+}
