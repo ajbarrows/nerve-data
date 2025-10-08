@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ajbarrows.github.io/nerve-data/index.html</loc>
-    <lastmod>2025-09-29T19:08:53.136Z</lastmod>
+    <loc>https://ajbarrows.github.io/nerve-data/using_git.html</loc>
+    <lastmod>2025-10-08T15:55:04.220Z</lastmod>
   </url>
   <url>
     <loc>https://ajbarrows.github.io/nerve-data/guide.html</loc>
-    <lastmod>2025-10-07T18:17:26.994Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ajbarrows.github.io/nerve-data/using_git.html</loc>
-    <lastmod>2025-10-07T18:24:43.880Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ajbarrows.github.io/nerve-data/scratch/language-agnostic/LICENSE.html</loc>
-    <lastmod>2025-09-29T17:26:50.786Z</lastmod>
+    <lastmod>2025-10-08T15:28:09.396Z</lastmod>
   </url>
   <url>
     <loc>https://ajbarrows.github.io/nerve-data/access_data.html</loc>
-    <lastmod>2025-10-07T18:18:51.740Z</lastmod>
+    <lastmod>2025-10-08T16:05:21.789Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ajbarrows.github.io/nerve-data/starting_projects.html</loc>
+    <lastmod>2025-10-08T16:31:08.684Z</lastmod>
   </url>
 </urlset>

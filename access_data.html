@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Accessing UVM-Hosted Data – NERVE Lab Data Management</title>
+<title>UVM-Hosted Data – NERVE Lab Data Management</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -90,7 +90,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="./index.qmd"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -118,7 +118,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./access_data.html">Accessing UVM-Hosted Data</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./access_data.html">Accessing Data</a></li><li class="breadcrumb-item"><a href="./access_data.html">UVM-Hosted Data</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -133,21 +133,49 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./guide.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data Management and Analysis Guides</span></a>
+ <span class="menu-text">Guides</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Accessing Data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./access_data.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Accessing UVM-Hosted Data</span></a>
+ <span class="menu-text">UVM-Hosted Data</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Reproducible Analysis</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./starting_projects.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Starting a Project</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./using_git.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Git and GitHub</span></a>
   </div>
 </li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -163,12 +191,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#things-you-will-need" id="toc-things-you-will-need" class="nav-link" data-scroll-target="#things-you-will-need">Things you will need</a></li>
   </ul></li>
   <li><a href="#accessing-data-stored-on-the-vacc" id="toc-accessing-data-stored-on-the-vacc" class="nav-link" data-scroll-target="#accessing-data-stored-on-the-vacc">Accessing data stored on the VACC</a></li>
-  <li><a href="#starting-a-project" id="toc-starting-a-project" class="nav-link" data-scroll-target="#starting-a-project">Starting a project</a>
-  <ul class="collapse">
-  <li><a href="#language-agnostic-project-elements-essential" id="toc-language-agnostic-project-elements-essential" class="nav-link" data-scroll-target="#language-agnostic-project-elements-essential">Language-agnostic project elements (essential):</a></li>
-  <li><a href="#r-specific-additions-basic-version" id="toc-r-specific-additions-basic-version" class="nav-link" data-scroll-target="#r-specific-additions-basic-version">R-specific additions (basic version)</a></li>
-  <li><a href="#python-specific-additions-basic-version" id="toc-python-specific-additions-basic-version" class="nav-link" data-scroll-target="#python-specific-additions-basic-version">Python-specific additions (basic version)</a></li>
-  </ul></li>
   <li><a href="#getting-data-into-a-your-data-directory" id="toc-getting-data-into-a-your-data-directory" class="nav-link" data-scroll-target="#getting-data-into-a-your-data-directory">Getting data into a your <code>/data</code> directory</a>
   <ul class="collapse">
   <li><a href="#working-directly-on-the-vacc" id="toc-working-directly-on-the-vacc" class="nav-link" data-scroll-target="#working-directly-on-the-vacc">Working directly on the VACC</a></li>
@@ -180,9 +202,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./access_data.html">Accessing Data</a></li><li class="breadcrumb-item"><a href="./access_data.html">UVM-Hosted Data</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Accessing UVM-Hosted Data</h1>
+<h1 class="title">UVM-Hosted Data</h1>
 </div>
 
 
@@ -255,54 +277,21 @@ Note
 <p>Using basic Linux commands, we can explore the file directory:</p>
 <p><img src="figures/dir_explore.png" class="img-fluid" style="width:60.0%"></p>
 </section>
-<section id="starting-a-project" class="level2">
-<h2 class="anchored" data-anchor-id="starting-a-project">Starting a project</h2>
-<p>All successful data science projects begin with a semi-rigorous file structure<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
-<p>Recommended reading: - <a href="https://cookiecutter-data-science.drivendata.org">cookiecutter data science</a> - <a href="https://docs.kedro.org/en/1.0.0/getting-started/course/">kedro</a></p>
-<p>Note: these are opinions. They’re best-practice-informed opinions, but still opinions.</p>
-<section id="language-agnostic-project-elements-essential" class="level3">
-<h3 class="anchored" data-anchor-id="language-agnostic-project-elements-essential">Language-agnostic project elements (essential):</h3>
-<pre><code>.
-├── data
-│&nbsp;&nbsp; ├── processed
-│&nbsp;&nbsp; └── raw
-├── LICENSE.md
-├── models
-├── notebooks
-├── README.md
-└── reports
-    └── figures</code></pre>
-<p><code>/data</code> contains (1) actual data files, or (2) symbolic links to data files (more on that later). <code>/data/raw</code> is data your code hasn’t touched. <code>/data/processed</code> are derivatives created within the current project.</p>
-<p><code>/models</code> contains fitted/trained serialized model objects (e.g., Python <code>.pkl</code> or R <code>.rds</code> files)</p>
-<p><code>/notebooks</code> contains exploratory and prototyping code written in Jupyter or R Markdown/Quarto notebooks. This is generally not where the analysis “actually happens.”</p>
-<p><code>/reports</code> contains presentation materials you intend to share (e.g., LaTeX, Quarto, .pdf, .docx)</p>
-<p><code>README.md</code> describes essential information about the project and its data repository</p>
-<p><code>LICENSE.md</code> is a standardized file describing how your code may be used.</p>
-</section>
-<section id="r-specific-additions-basic-version" class="level3">
-<h3 class="anchored" data-anchor-id="r-specific-additions-basic-version">R-specific additions (basic version)</h3>
-<pre><code>.
-├── {project-name}.Rproj
-├── R
-│&nbsp;&nbsp; └── {load_data}.R
-├── renv
-├── renv.lock</code></pre>
-<p>/{}.Rproj` file – basic collection of settings interpreted by RStudio. Not strictly necessary, but handy.</p>
-<p><code>/renv</code> and <code>renv.lock</code> are environment files created by the package <a href="https://rstudio.github.io/renv/"><code>renv</code></a>. More on virtual environments later.</p>
-<p><code>/R</code> contains R scripts where the analysis “actually happens.”</p>
-</section>
-<section id="python-specific-additions-basic-version" class="level3">
-<h3 class="anchored" data-anchor-id="python-specific-additions-basic-version">Python-specific additions (basic version)</h3>
-<pre><code>.
-├── environment.yml
-├── src
-│&nbsp;&nbsp; └── {load_data}.py</code></pre>
-<p><code>/environment.yml</code> is a “frozen” file created by the library <a href="https://docs.conda.io/projects/conda/en/stable/user-guide/tasks/manage-environments.html"><code>conda</code></a>. More on virtual environments later.</p>
-<p><code>/src</code> contains Python scripts where the analysis “actually happens.”</p>
-</section>
-</section>
 <section id="getting-data-into-a-your-data-directory" class="level2">
 <h2 class="anchored" data-anchor-id="getting-data-into-a-your-data-directory">Getting data into a your <code>/data</code> directory</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>I assume you are using a rigorous project structure including a <code>/data</code> directory and <code>/data/raw</code> and <code>/data/processed</code> subdirectories. See <a href="./starting_projects.html">Starting a Project</a> for more information.</p>
+</div>
+</div>
 <section id="working-directly-on-the-vacc" class="level3">
 <h3 class="anchored" data-anchor-id="working-directly-on-the-vacc">Working directly on the VACC</h3>
 <p>If you plan to do your data cleaning, exploration, analysis, and reporting entirely on the VACC (more on this later), you can simply create a <strong>symbolic link</strong> between the <code>/data</code> directory in your project and the shared NERVE Lab data repository. A symbolic link is just like a Windows or macOS shortcut, but it’s created using the terminal:</p>
@@ -314,7 +303,7 @@ ln -s /users/a/j/ajbarrow/scratch/data/ABCD data/raw</code></pre>
 </section>
 <section id="working-on-your-local-computer" class="level3">
 <h3 class="anchored" data-anchor-id="working-on-your-local-computer">Working on your local computer</h3>
-<p>If you don’t plan to work on the VACC directly (or if you will prototype your code on a local machine and possibly run analyses on the VACC later), you will need to copy data to your local machine <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. There are several methods for doing this. In any case, I strongly recommend that you <strong>maintain the original file structure</strong>.</p>
+<p>If you don’t plan to work on the VACC directly (or if you will prototype your code on a local machine and possibly run analyses on the VACC later), you will need to copy data to your local machine <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. There are several methods for doing this. In any case, I strongly recommend that you <strong>maintain the original file structure</strong>.</p>
 <section id="rsync-recommended" class="level4">
 <h4 class="anchored" data-anchor-id="rsync-recommended"><code>rsync</code> (recommended)</h4>
 <p>Linux and macOS have a built in tool called “remote sync” (<a href="https://ss64.com/bash/rsync.html"><code>rsync</code></a>) which synchronizes file trees, often between “local” (e.g., your laptop) and “remote” (e.g., the VACC) resources. <code>rsync</code> commands take the form</p>
@@ -341,8 +330,7 @@ rsync -avP \\
 <div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>Many doomed projects also begin with semi-rigorous data structures.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>Please do not interpret this section as a recommendation that you copy data from the VACC to your local machine.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Please do not interpret this section as a recommendation that you copy data from the VACC to your local machine.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -1,30 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "NERVE Lab Data Management Guide",
-    "section": "",
-    "text": "This website is meant to serve as an introduction to:\n\nloading and analyzing large neuroimaging datasets at UVM\ndata science project best practices\ndoing reproducible science.\n\nThis guide presumes the following:\n\nyou have an account with the Vermont Advanced Computing Center (VACC)\nyou are using one of the following operating systems:\n\nLinux (any distribution)\nmacOS\nWindows Subsystem for Linux (WSL)"
-  },
-  {
-    "objectID": "index.html#introduction",
-    "href": "index.html#introduction",
-    "title": "NERVE Lab Data Management Guide",
-    "section": "",
-    "text": "This website is meant to serve as an introduction to:\n\nloading and analyzing large neuroimaging datasets at UVM\ndata science project best practices\ndoing reproducible science.\n\nThis guide presumes the following:\n\nyou have an account with the Vermont Advanced Computing Center (VACC)\nyou are using one of the following operating systems:\n\nLinux (any distribution)\nmacOS\nWindows Subsystem for Linux (WSL)"
-  },
-  {
-    "objectID": "guide.html",
-    "href": "guide.html",
-    "title": "Data Management and Analysis Guides",
-    "section": "",
-    "text": "A series of guides that might help some people (sometimes) who work with ABCD and HBCD data.",
-    "crumbs": [
-      "Guide",
-      "Data Management and Analysis Guides"
-    ]
-  },
-  {
     "objectID": "using_git.html",
     "href": "using_git.html",
     "title": "Git and GitHub",
@@ -32,6 +7,7 @@
     "text": "Note\n\n\n\nMy LLM friend Claude and I made this together.",
     "crumbs": [
       "Guide",
+      "Reproducible Analysis",
       "Git and GitHub"
     ]
   },
@@ -43,6 +19,7 @@
     "text": "What is Git?\nGit is a version control system that tracks changes in your files. It works locally on your computer and creates snapshots (called commits) of your work. Think of it like “track changes” for code and data projects, but much more powerful.",
     "crumbs": [
       "Guide",
+      "Reproducible Analysis",
       "Git and GitHub"
     ]
   },
@@ -54,6 +31,7 @@
     "text": "What is GitHub?\nGitHub is a remote hosting platform for Git repositories. It provides:\n\nBackup in the cloud\nTools to share and collaborate\nA portfolio of your work\nProject management features\n\nKey distinction: Git runs locally on your machine, while GitHub is the remote service where you store your repositories.",
     "crumbs": [
       "Guide",
+      "Reproducible Analysis",
       "Git and GitHub"
     ]
   },
@@ -65,6 +43,7 @@
     "text": "Git Basics\n\nCore Concepts\nRepository (repo): A project folder that Git is tracking. Contains all your files plus a hidden .git directory with the version history.\nCommit: A snapshot of your work at a specific point in time. Each commit has a unique ID and a message describing what changed.\nBranch: A separate line of development. We’ll keep things simple with just the main branch for now.\n\n\nWhat Git Tracks\nGit is great for tracking certain types of files:\n✅ DO track:\n\nCode files (.py, .R, .jl)\nNotebooks (.ipynb, .qmd, .Rmd)\nDocumentation (README.md, notes)\nConfiguration files (requirements.txt, config.yaml)\n\n❌ DON’T track:\n\nLarge datasets (use data storage solutions instead)\nAPI keys and credentials (use environment variables)\nGenerated outputs (plots, HTML reports)\nBinary files that change frequently\n\n\n\nBasic Workflow\nThe fundamental Git workflow follows these steps:\n\nModify files in your project\nStage changes with git add\nCommit changes with git commit\nRepeat!\n\nThis pattern becomes second nature once you practice it a few times.",
     "crumbs": [
       "Guide",
+      "Reproducible Analysis",
       "Git and GitHub"
     ]
   },
@@ -76,6 +55,7 @@
     "text": "Essential Commands\nHere are the 5 commands you need to get started with Git:\n# Start tracking a project\ngit init\n\n# Stage changes (prepare files for commit)\ngit add filename.py\n\n# Save a snapshot with a message\ngit commit -m \"Clear message about what changed\"\n\n# Check what's changed\ngit status\n\n# View commit history\ngit log\n\nExample: Creating Your First Repository\n# Create and navigate to a new project\ngit init my-analysis\ncd my-analysis\n\n# Create a simple analysis file\n# (create your notebook or script here)\n\n# Stage and commit\ngit add analysis.ipynb\ngit commit -m \"Initial analysis of dataset X\"",
     "crumbs": [
       "Guide",
+      "Reproducible Analysis",
       "Git and GitHub"
     ]
   },
@@ -87,6 +67,7 @@
     "text": "GitHub for Collaboration\n\nConnecting Local and Remote\nOnce you have a local Git repository, you can connect it to GitHub to back it up and share it with others.\nTwo new commands:\n# Send your commits to GitHub\ngit push\n\n# Get the latest changes from GitHub\ngit pull\n\n\nTypical Workflow with GitHub\n\nCreate a repository on GitHub\nConnect your local repository to GitHub\nPush your work to the remote\nCollaborate with others who can clone or contribute\nPull their changes to stay up to date\n\n\n\nPushing to GitHub\n# Connect to GitHub (one time setup)\ngit remote add origin https://github.com/username/repo.git\n\n# Push your commits\ngit push -u origin main\nAfter pushing, anyone with access can view and use your analysis through GitHub’s web interface.",
     "crumbs": [
       "Guide",
+      "Reproducible Analysis",
       "Git and GitHub"
     ]
   },
@@ -98,6 +79,7 @@
     "text": "Data Science Specific Considerations\n\nWhat to Commit\nFor data science projects, make sure to include:\n\nAnalysis scripts (.py, .R, .jl)\nJupyter notebooks or Quarto documents\nDependency files (requirements.txt, renv.lock, environment.yml)\nREADME.md with project description and setup instructions\nDocumentation and notes\n\n\n\nWhat NOT to Commit\nUse a .gitignore file to exclude:\n\nData files (.csv, .parquet, .xlsx) - usually too large for Git\nCredentials (.env files, API keys, passwords)\nOutput files (plots, HTML reports, model files)\n\n\n\nThe .gitignore File\nCreate a .gitignore file in your repository root:\n# Data\n*.csv\n*.parquet\n*.xlsx\ndata/\nraw_data/\n\n# Credentials\n.env\nsecrets.json\n.Renviron\n\n# Outputs\n*.html\n*.png\n*.pdf\nfigures/\noutput/\n\n# Python\n__pycache__/\nvenv/\n*.pyc\n\n# R\n.Rproj.user/\n.Rhistory\n.RData\n\n# Jupyter\n.ipynb_checkpoints/\n\n\nWorking with Jupyter Notebooks\nJupyter notebooks can be tricky with version control because they contain outputs and metadata that change frequently.\nBest practices:\n\nClear outputs before committing: Cell → All Output → Clear\nUse tools like nbstripout to automatically strip outputs\nConsider using Quarto (.qmd) files instead - they’re plain text and version control friendly\nReview diffs carefully on GitHub to see what actually changed",
     "crumbs": [
       "Guide",
+      "Reproducible Analysis",
       "Git and GitHub"
     ]
   },
@@ -109,6 +91,7 @@
     "text": "Hands-On Practice\nTo solidify these concepts, try this exercise:\n\nCreate a new directory for a simple analysis project\nInitialize Git with git init\nCreate a basic notebook or script with some analysis\nMake your first commit\nMake a change to your code and commit again\nCreate a repository on GitHub\nPush your local work to GitHub\n\nBonus: Add a .gitignore file appropriate for your project.",
     "crumbs": [
       "Guide",
+      "Reproducible Analysis",
       "Git and GitHub"
     ]
   },
@@ -120,6 +103,7 @@
     "text": "Best Practices\n\nCommit Messages\nWrite clear, descriptive commit messages that explain what changed and why.\nGood examples:\n\n\"Add data cleaning function for missing values\"\n\"Fix bug in correlation calculation\"\n\"Update visualization to use seaborn style\"\n\nBad examples:\n\n\"updates\"\n\"fixed stuff\"\n\"asdfasdf\"\n\n\n\nCommit Frequency\n\nCommit early, commit often\n\nMake small, focused commits rather than large ones that change many things. This makes it easier to:\n\nUnderstand what changed\nFind bugs by reviewing specific commits\nRevert changes if something breaks\n\n\n\nBranching (Advanced)\nAs you get more comfortable, explore branches for:\n\nTesting new features without breaking your main analysis\nCollaborating with others on different aspects\nKeeping stable and experimental work separate",
     "crumbs": [
       "Guide",
+      "Reproducible Analysis",
       "Git and GitHub"
     ]
   },
@@ -131,6 +115,7 @@
     "text": "Resources for Learning More\n\nGit Documentation - Official Git documentation\nGitHub Skills - Interactive tutorials",
     "crumbs": [
       "Guide",
+      "Reproducible Analysis",
       "Git and GitHub"
     ]
   },
@@ -142,73 +127,126 @@
     "text": "Key Takeaways\n\nVersion control is essential for reproducible data science\nStart simple with the basic commands: init, add, commit, push, pull\nCommit frequently with clear messages",
     "crumbs": [
       "Guide",
+      "Reproducible Analysis",
       "Git and GitHub"
+    ]
+  },
+  {
+    "objectID": "guide.html",
+    "href": "guide.html",
+    "title": "Data Management and Analysis Guides",
+    "section": "",
+    "text": "A series of guides that might help some people (sometimes) who work with ABCD and HBCD data.",
+    "crumbs": [
+      "Guide",
+      "Guides"
+    ]
+  },
+  {
+    "objectID": "guide.html#introduction",
+    "href": "guide.html#introduction",
+    "title": "Data Management and Analysis Guides",
+    "section": "Introduction",
+    "text": "Introduction\nThis website is meant to serve as an introduction to:\n\nloading and analyzing large neuroimaging datasets at UVM\ndata science project best practices\ndoing reproducible science.\n\nThis guide presumes the following:\n\nyou have an account with the Vermont Advanced Computing Center (VACC)\nyou are using one of the following operating systems:\n\nLinux (any distribution)\nmacOS\nWindows Subsystem for Linux (WSL)",
+    "crumbs": [
+      "Guide",
+      "Guides"
     ]
   },
   {
     "objectID": "access_data.html",
     "href": "access_data.html",
-    "title": "Accessing UVM-Hosted Data",
+    "title": "UVM-Hosted Data",
     "section": "",
     "text": "Note\n\n\n\nGuiding philosophy: share data by sharing code to encourage best practices.\n\n\nGoal: Agree on a flexible, convenient way to produce collaborative, shareable data science projects.\n\n\n\nan account with the Vermont Advanced Computing Center (VACC)\none of the following operating systems:\n\nLinux (any distribution)\nmacOS\nWindows Subsystem for Linux (WSL)",
     "crumbs": [
       "Guide",
-      "Accessing UVM-Hosted Data"
+      "Accessing Data",
+      "UVM-Hosted Data"
     ]
   },
   {
     "objectID": "access_data.html#overview",
     "href": "access_data.html#overview",
-    "title": "Accessing UVM-Hosted Data",
+    "title": "UVM-Hosted Data",
     "section": "",
     "text": "Note\n\n\n\nGuiding philosophy: share data by sharing code to encourage best practices.\n\n\nGoal: Agree on a flexible, convenient way to produce collaborative, shareable data science projects.\n\n\n\nan account with the Vermont Advanced Computing Center (VACC)\none of the following operating systems:\n\nLinux (any distribution)\nmacOS\nWindows Subsystem for Linux (WSL)",
     "crumbs": [
       "Guide",
-      "Accessing UVM-Hosted Data"
+      "Accessing Data",
+      "UVM-Hosted Data"
     ]
   },
   {
     "objectID": "access_data.html#accessing-data-stored-on-the-vacc",
     "href": "access_data.html#accessing-data-stored-on-the-vacc",
-    "title": "Accessing UVM-Hosted Data",
+    "title": "UVM-Hosted Data",
     "section": "Accessing data stored on the VACC",
     "text": "Accessing data stored on the VACC\n\nUVM’s high-performance computing (HPC) cluster\n\n“cluster” refers to multiple compute ‘nodes’ working in concert\n\nAccessible primarily though SSH\n\nbut also through a GUI (Open OnDemand)\n\n\nOnce you have a VACC account, you’ll want to familiarize yourself with the documentation. This documentation incldues guides for\n\nLinux basics\nconnecting to the VACC’s “login” nodes\nSLURM – the VACC’s job submission manager\nlanguage-specific instructions\nmuch more…\n\nI’m going to assume you’ve reviewed these guides and have successfully connected to a VACC login node using SSH. I have an SSH “alias” set up to make things easier:\n\nYou can now navigate to where our in-house data sets are maintained:\ncd /users/a/j/ajbarrow/scratch/data\nUsing basic Linux commands, we can explore the file directory:",
     "crumbs": [
       "Guide",
-      "Accessing UVM-Hosted Data"
-    ]
-  },
-  {
-    "objectID": "access_data.html#starting-a-project",
-    "href": "access_data.html#starting-a-project",
-    "title": "Accessing UVM-Hosted Data",
-    "section": "Starting a project",
-    "text": "Starting a project\nAll successful data science projects begin with a semi-rigorous file structure1.\nRecommended reading: - cookiecutter data science - kedro\nNote: these are opinions. They’re best-practice-informed opinions, but still opinions.\n\nLanguage-agnostic project elements (essential):\n.\n├── data\n│   ├── processed\n│   └── raw\n├── LICENSE.md\n├── models\n├── notebooks\n├── README.md\n└── reports\n    └── figures\n/data contains (1) actual data files, or (2) symbolic links to data files (more on that later). /data/raw is data your code hasn’t touched. /data/processed are derivatives created within the current project.\n/models contains fitted/trained serialized model objects (e.g., Python .pkl or R .rds files)\n/notebooks contains exploratory and prototyping code written in Jupyter or R Markdown/Quarto notebooks. This is generally not where the analysis “actually happens.”\n/reports contains presentation materials you intend to share (e.g., LaTeX, Quarto, .pdf, .docx)\nREADME.md describes essential information about the project and its data repository\nLICENSE.md is a standardized file describing how your code may be used.\n\n\nR-specific additions (basic version)\n.\n├── {project-name}.Rproj\n├── R\n│   └── {load_data}.R\n├── renv\n├── renv.lock\n/{}.Rproj` file – basic collection of settings interpreted by RStudio. Not strictly necessary, but handy.\n/renv and renv.lock are environment files created by the package renv. More on virtual environments later.\n/R contains R scripts where the analysis “actually happens.”\n\n\nPython-specific additions (basic version)\n.\n├── environment.yml\n├── src\n│   └── {load_data}.py\n/environment.yml is a “frozen” file created by the library conda. More on virtual environments later.\n/src contains Python scripts where the analysis “actually happens.”",
-    "crumbs": [
-      "Guide",
-      "Accessing UVM-Hosted Data"
+      "Accessing Data",
+      "UVM-Hosted Data"
     ]
   },
   {
     "objectID": "access_data.html#getting-data-into-a-your-data-directory",
     "href": "access_data.html#getting-data-into-a-your-data-directory",
-    "title": "Accessing UVM-Hosted Data",
+    "title": "UVM-Hosted Data",
     "section": "Getting data into a your /data directory",
-    "text": "Getting data into a your /data directory\n\nWorking directly on the VACC\nIf you plan to do your data cleaning, exploration, analysis, and reporting entirely on the VACC (more on this later), you can simply create a symbolic link between the /data directory in your project and the shared NERVE Lab data repository. A symbolic link is just like a Windows or macOS shortcut, but it’s created using the terminal:\nln -s /path/to/file /path/to/symlink\nTo be concrete (assuming your project is caled my_project):\ncd my_project\nln -s /users/a/j/ajbarrow/scratch/data/ABCD data/raw\nThis will create a link between the repository that holds /ABCD and your project’s /data/raw folder. This means that you will access data from your local /data/raw/ folder – as will anyone who wants to reproduce your results!\n\n\nWorking on your local computer\nIf you don’t plan to work on the VACC directly (or if you will prototype your code on a local machine and possibly run analyses on the VACC later), you will need to copy data to your local machine 2. There are several methods for doing this. In any case, I strongly recommend that you maintain the original file structure.\n\nrsync (recommended)\nLinux and macOS have a built in tool called “remote sync” (rsync) which synchronizes file trees, often between “local” (e.g., your laptop) and “remote” (e.g., the VACC) resources. rsync commands take the form\nrsync [option] source destination\nI encourage you to become familiar with the various options used in rsync, but I will suggest a common implementation using teh -a (“archive”) flag which contains a number of common options (e.g., ensures all subdirectories are copied, preserves symlinks, and preserves ownership and permissions), the -v (“verbose”) flag that prints all errors and warnings, and the -P flag, which shows an interactive progress bar.\nFrom my local machine:\ncd my_project\nrsync -avP \\\\ \n    vacc:/users/a/j/ajbarrow/scratch/data/ABCD/6.0/dairc/rawdata/phenotype data/raw\nNote The \\\\ indicates a multi-line command. This is not necessary.\nOther note You will likely have to replace vacc with your_netid@login.vacc.uvm.edu.\n\n\nOpen OnDemand (GUI-based alternative)\nIn order to use Open OnDemand, you need to be on campus or connected to UVM’s VPN.",
+    "text": "Getting data into a your /data directory\n\n\n\n\n\n\nNote\n\n\n\nI assume you are using a rigorous project structure including a /data directory and /data/raw and /data/processed subdirectories. See Starting a Project for more information.\n\n\n\nWorking directly on the VACC\nIf you plan to do your data cleaning, exploration, analysis, and reporting entirely on the VACC (more on this later), you can simply create a symbolic link between the /data directory in your project and the shared NERVE Lab data repository. A symbolic link is just like a Windows or macOS shortcut, but it’s created using the terminal:\nln -s /path/to/file /path/to/symlink\nTo be concrete (assuming your project is caled my_project):\ncd my_project\nln -s /users/a/j/ajbarrow/scratch/data/ABCD data/raw\nThis will create a link between the repository that holds /ABCD and your project’s /data/raw folder. This means that you will access data from your local /data/raw/ folder – as will anyone who wants to reproduce your results!\n\n\nWorking on your local computer\nIf you don’t plan to work on the VACC directly (or if you will prototype your code on a local machine and possibly run analyses on the VACC later), you will need to copy data to your local machine 1. There are several methods for doing this. In any case, I strongly recommend that you maintain the original file structure.\n\nrsync (recommended)\nLinux and macOS have a built in tool called “remote sync” (rsync) which synchronizes file trees, often between “local” (e.g., your laptop) and “remote” (e.g., the VACC) resources. rsync commands take the form\nrsync [option] source destination\nI encourage you to become familiar with the various options used in rsync, but I will suggest a common implementation using teh -a (“archive”) flag which contains a number of common options (e.g., ensures all subdirectories are copied, preserves symlinks, and preserves ownership and permissions), the -v (“verbose”) flag that prints all errors and warnings, and the -P flag, which shows an interactive progress bar.\nFrom my local machine:\ncd my_project\nrsync -avP \\\\ \n    vacc:/users/a/j/ajbarrow/scratch/data/ABCD/6.0/dairc/rawdata/phenotype data/raw\nNote The \\\\ indicates a multi-line command. This is not necessary.\nOther note You will likely have to replace vacc with your_netid@login.vacc.uvm.edu.\n\n\nOpen OnDemand (GUI-based alternative)\nIn order to use Open OnDemand, you need to be on campus or connected to UVM’s VPN.",
     "crumbs": [
       "Guide",
-      "Accessing UVM-Hosted Data"
+      "Accessing Data",
+      "UVM-Hosted Data"
     ]
   },
   {
     "objectID": "access_data.html#footnotes",
     "href": "access_data.html#footnotes",
-    "title": "Accessing UVM-Hosted Data",
+    "title": "UVM-Hosted Data",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nMany doomed projects also begin with semi-rigorous data structures.↩︎\nPlease do not interpret this section as a recommendation that you copy data from the VACC to your local machine.↩︎",
+    "text": "Footnotes\n\n\nPlease do not interpret this section as a recommendation that you copy data from the VACC to your local machine.↩︎",
     "crumbs": [
       "Guide",
-      "Accessing UVM-Hosted Data"
+      "Accessing Data",
+      "UVM-Hosted Data"
+    ]
+  },
+  {
+    "objectID": "starting_projects.html",
+    "href": "starting_projects.html",
+    "title": "Starting a Project",
+    "section": "",
+    "text": "All successful data science projects begin with a semi-rigorous file structure1.\nRecommended reading:\n\ncookiecutter data science\nkedro\n\nNote: these are opinions. They’re best-practice-informed opinions, but still opinions.\n\n\n.\n├── data\n│   ├── processed\n│   └── raw\n├── LICENSE.md\n├── models\n├── notebooks\n├── README.md\n└── reports\n    └── figures\n/data contains (1) actual data files, or (2) symbolic links to data files (more on that later). /data/raw is data your code hasn’t touched. /data/processed are derivatives created within the current project.\n/models contains fitted/trained serialized model objects (e.g., Python .pkl or R .rds files)\n/notebooks contains exploratory and prototyping code written in Jupyter or R Markdown/Quarto notebooks. This is generally not where the analysis “actually happens.”\n/reports contains presentation materials you intend to share (e.g., LaTeX, Quarto, .pdf, .docx)\nREADME.md describes essential information about the project and its data repository\nLICENSE.md is a standardized file describing how your code may be used.\n\n\n\n.\n├── {project-name}.Rproj\n├── R\n│   └── {load_data}.R\n├── renv\n├── renv.lock\n/{}.Rproj` file – basic collection of settings interpreted by RStudio. Not strictly necessary, but handy.\n/renv and renv.lock are environment files created by the package renv. More on virtual environments later.\n/R contains R scripts where the analysis “actually happens.”\n\n\n\n.\n├── environment.yml\n├── src\n│   └── {load_data}.py\n/environment.yml is a “frozen” file created by the library conda. More on virtual environments later.\n/src contains Python scripts where the analysis “actually happens.”",
+    "crumbs": [
+      "Guide",
+      "Reproducible Analysis",
+      "Starting a Project"
+    ]
+  },
+  {
+    "objectID": "starting_projects.html#starting-a-project",
+    "href": "starting_projects.html#starting-a-project",
+    "title": "Starting a Project",
+    "section": "",
+    "text": "All successful data science projects begin with a semi-rigorous file structure1.\nRecommended reading:\n\ncookiecutter data science\nkedro\n\nNote: these are opinions. They’re best-practice-informed opinions, but still opinions.\n\n\n.\n├── data\n│   ├── processed\n│   └── raw\n├── LICENSE.md\n├── models\n├── notebooks\n├── README.md\n└── reports\n    └── figures\n/data contains (1) actual data files, or (2) symbolic links to data files (more on that later). /data/raw is data your code hasn’t touched. /data/processed are derivatives created within the current project.\n/models contains fitted/trained serialized model objects (e.g., Python .pkl or R .rds files)\n/notebooks contains exploratory and prototyping code written in Jupyter or R Markdown/Quarto notebooks. This is generally not where the analysis “actually happens.”\n/reports contains presentation materials you intend to share (e.g., LaTeX, Quarto, .pdf, .docx)\nREADME.md describes essential information about the project and its data repository\nLICENSE.md is a standardized file describing how your code may be used.\n\n\n\n.\n├── {project-name}.Rproj\n├── R\n│   └── {load_data}.R\n├── renv\n├── renv.lock\n/{}.Rproj` file – basic collection of settings interpreted by RStudio. Not strictly necessary, but handy.\n/renv and renv.lock are environment files created by the package renv. More on virtual environments later.\n/R contains R scripts where the analysis “actually happens.”\n\n\n\n.\n├── environment.yml\n├── src\n│   └── {load_data}.py\n/environment.yml is a “frozen” file created by the library conda. More on virtual environments later.\n/src contains Python scripts where the analysis “actually happens.”",
+    "crumbs": [
+      "Guide",
+      "Reproducible Analysis",
+      "Starting a Project"
+    ]
+  },
+  {
+    "objectID": "starting_projects.html#footnotes",
+    "href": "starting_projects.html#footnotes",
+    "title": "Starting a Project",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nMany doomed projects also begin with semi-rigorous data structures.↩︎",
+    "crumbs": [
+      "Guide",
+      "Reproducible Analysis",
+      "Starting a Project"
     ]
   }
 ]
