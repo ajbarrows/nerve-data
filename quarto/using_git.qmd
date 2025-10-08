@@ -1,0 +1,273 @@
+---
+title: "Git and GitHub"
+subtitle: "Version Control for Analysis Projects"
+date: today
+format: 
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: false
+    smooth-scroll: true
+---
+
+
+::: {.callout-note}
+My LLM friend Claude and I made this together.
+:::
+
+
+## What is Git?
+
+**Git** is a version control system that tracks changes in your files. It works locally on your computer and creates snapshots (called commits) of your work. Think of it like "track changes" for code and data projects, but much more powerful.
+
+## What is GitHub?
+
+**GitHub** is a remote hosting platform for Git repositories. It provides:
+
+- Backup in the cloud
+- Tools to share and collaborate
+- A portfolio of your work
+- Project management features
+
+**Key distinction:** Git runs locally on your machine, while GitHub is the remote service where you store your repositories.
+
+## Git Basics
+
+### Core Concepts
+
+**Repository (repo):** A project folder that Git is tracking. Contains all your files plus a hidden `.git` directory with the version history.
+
+**Commit:** A snapshot of your work at a specific point in time. Each commit has a unique ID and a message describing what changed.
+
+**Branch:** A separate line of development. We'll keep things simple with just the main branch for now.
+
+### What Git Tracks
+
+Git is great for tracking certain types of files:
+
+**✅ DO track:**
+
+- Code files (`.py`, `.R`, `.jl`)
+- Notebooks (`.ipynb`, `.qmd`, `.Rmd`)
+- Documentation (`README.md`, notes)
+- Configuration files (`requirements.txt`, `config.yaml`)
+
+**❌ DON'T track:**
+
+- Large datasets (use data storage solutions instead)
+- API keys and credentials (use environment variables)
+- Generated outputs (plots, HTML reports)
+- Binary files that change frequently
+
+### Basic Workflow
+
+The fundamental Git workflow follows these steps:
+
+1. **Modify** files in your project
+2. **Stage** changes with `git add`
+3. **Commit** changes with `git commit`
+4. **Repeat!**
+
+This pattern becomes second nature once you practice it a few times.
+
+## Essential Commands
+
+Here are the 5 commands you need to get started with Git:
+
+```bash
+# Start tracking a project
+git init
+
+# Stage changes (prepare files for commit)
+git add filename.py
+
+# Save a snapshot with a message
+git commit -m "Clear message about what changed"
+
+# Check what's changed
+git status
+
+# View commit history
+git log
+```
+
+### Example: Creating Your First Repository
+
+```bash
+# Create and navigate to a new project
+git init my-analysis
+cd my-analysis
+
+# Create a simple analysis file
+# (create your notebook or script here)
+
+# Stage and commit
+git add analysis.ipynb
+git commit -m "Initial analysis of dataset X"
+```
+
+## GitHub for Collaboration
+
+### Connecting Local and Remote
+
+Once you have a local Git repository, you can connect it to GitHub to back it up and share it with others.
+
+**Two new commands:**
+
+```bash
+# Send your commits to GitHub
+git push
+
+# Get the latest changes from GitHub
+git pull
+```
+
+### Typical Workflow with GitHub
+
+1. Create a repository on GitHub
+2. Connect your local repository to GitHub
+3. Push your work to the remote
+4. Collaborate with others who can clone or contribute
+5. Pull their changes to stay up to date
+
+### Pushing to GitHub
+
+```bash
+# Connect to GitHub (one time setup)
+git remote add origin https://github.com/username/repo.git
+
+# Push your commits
+git push -u origin main
+```
+
+After pushing, anyone with access can view and use your analysis through GitHub's web interface.
+
+## Data Science Specific Considerations
+
+### What to Commit
+
+For data science projects, make sure to include:
+
+- Analysis scripts (`.py`, `.R`, `.jl`)
+- Jupyter notebooks or Quarto documents
+- Dependency files (`requirements.txt`, `renv.lock`, `environment.yml`)
+- `README.md` with project description and setup instructions
+- Documentation and notes
+
+### What NOT to Commit
+
+Use a `.gitignore` file to exclude:
+
+- **Data files** (`.csv`, `.parquet`, `.xlsx`) - usually too large for Git
+- **Credentials** (`.env` files, API keys, passwords)
+- **Output files** (plots, HTML reports, model files)
+
+### The .gitignore File
+
+Create a `.gitignore` file in your repository root:
+
+```
+# Data
+*.csv
+*.parquet
+*.xlsx
+data/
+raw_data/
+
+# Credentials
+.env
+secrets.json
+.Renviron
+
+# Outputs
+*.html
+*.png
+*.pdf
+figures/
+output/
+
+# Python
+__pycache__/
+venv/
+*.pyc
+
+# R
+.Rproj.user/
+.Rhistory
+.RData
+
+# Jupyter
+.ipynb_checkpoints/
+```
+
+### Working with Jupyter Notebooks
+
+Jupyter notebooks can be tricky with version control because they contain outputs and metadata that change frequently.
+
+**Best practices:**
+
+- Clear outputs before committing: `Cell → All Output → Clear`
+- Use tools like `nbstripout` to automatically strip outputs
+- Consider using Quarto (`.qmd`) files instead - they're plain text and version control friendly
+- Review diffs carefully on GitHub to see what actually changed
+
+## Hands-On Practice
+
+To solidify these concepts, try this exercise:
+
+1. Create a new directory for a simple analysis project
+2. Initialize Git with `git init`
+3. Create a basic notebook or script with some analysis
+4. Make your first commit
+5. Make a change to your code and commit again
+6. Create a repository on GitHub
+7. Push your local work to GitHub
+
+**Bonus:** Add a `.gitignore` file appropriate for your project.
+
+## Best Practices
+
+### Commit Messages
+
+Write clear, descriptive commit messages that explain **what** changed and **why**.
+
+**Good examples:**
+
+- `"Add data cleaning function for missing values"`
+- `"Fix bug in correlation calculation"`
+- `"Update visualization to use seaborn style"`
+
+**Bad examples:**
+
+- `"updates"`
+- `"fixed stuff"`
+- `"asdfasdf"`
+
+### Commit Frequency
+
+> **Commit early, commit often**
+
+Make small, focused commits rather than large ones that change many things. This makes it easier to:
+
+- Understand what changed
+- Find bugs by reviewing specific commits
+- Revert changes if something breaks
+
+### Branching (Advanced)
+
+As you get more comfortable, explore branches for:
+
+- Testing new features without breaking your main analysis
+- Collaborating with others on different aspects
+- Keeping stable and experimental work separate
+
+## Resources for Learning More
+
+- [Git Documentation](https://git-scm.com/doc) - Official Git documentation
+- [GitHub Skills](https://skills.github.com/) - Interactive tutorials
+
+## Key Takeaways
+
+- **Version control is essential** for reproducible data science
+- **Start simple** with the basic commands: init, add, commit, push, pull
+- **Commit frequently** with clear messages

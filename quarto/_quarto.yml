@@ -1,5 +1,8 @@
 project:
   type: website
+  render: # do not render index by default
+    - "*.qmd"
+    - "!index.qmd"
 
 website:
   title: "NERVE Lab Data Management"
@@ -14,6 +17,20 @@ website:
         menu:
           - text: Data Access
             href: https://github.com/ajbarrows/nerve-data
+  sidebar:
+  - title: Guide
+    style: "docked"
+    contents:
+      - text: "Guides"
+        href: guide.qmd
+      - section: "Accessing Data"        
+        contents:
+          - access_data.qmd
+      - section: "Reproducible Analysis"
+        # href: using_git.qmd
+        contents:
+          - starting_projects.qmd
+          - using_git.qmd
 format:
   html:
     theme:

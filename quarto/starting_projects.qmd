@@ -1,0 +1,77 @@
+---
+title: "Starting a Project"
+---
+
+## Starting a project
+
+All successful data science projects begin with a semi-rigorous file structure[^1].
+
+Recommended reading:
+
+- [cookiecutter data science](https://cookiecutter-data-science.drivendata.org)
+- [kedro](https://docs.kedro.org/en/1.0.0/getting-started/course/)
+
+Note: these are opinions. They're best-practice-informed opinions, but still opinions.
+
+
+### Language-agnostic project elements (essential):
+
+```
+.
+├── data
+│   ├── processed
+│   └── raw
+├── LICENSE.md
+├── models
+├── notebooks
+├── README.md
+└── reports
+    └── figures
+```
+
+`/data` contains (1) actual data files, or (2) symbolic links to data files (more on that later). `/data/raw` is data your code hasn't touched. `/data/processed` are derivatives created within the current project.
+
+`/models` contains fitted/trained serialized model objects (e.g., Python `.pkl` or R `.rds` files)
+
+`/notebooks` contains exploratory and prototyping code written in Jupyter or R Markdown/Quarto notebooks. This is generally not where the analysis "actually happens."
+
+`/reports` contains presentation materials you intend to share (e.g., LaTeX, Quarto, .pdf, .docx)
+
+`README.md` describes essential information about the project and its data repository
+
+`LICENSE.md` is a standardized file describing how your code may be used.
+
+### R-specific additions (basic version)
+
+```
+.
+├── {project-name}.Rproj
+├── R
+│   └── {load_data}.R
+├── renv
+├── renv.lock
+```
+
+/{}.Rproj` file -- basic collection of settings interpreted by RStudio. Not strictly necessary, but handy.
+
+`/renv` and `renv.lock`  are environment files created by the package [`renv`](https://rstudio.github.io/renv/). More on virtual environments later.
+
+`/R` contains R scripts where the analysis "actually happens."
+
+
+### Python-specific additions (basic version)
+
+
+```
+.
+├── environment.yml
+├── src
+│   └── {load_data}.py
+```
+
+`/environment.yml` is a "frozen" file created by the library [`conda`](https://docs.conda.io/projects/conda/en/stable/user-guide/tasks/manage-environments.html). More on virtual environments later.
+
+`/src` contains Python scripts where the analysis "actually happens."
+
+
+[^1]: Many doomed projects also begin with semi-rigorous data structures.
