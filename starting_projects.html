@@ -90,7 +90,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.qmd"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -186,12 +186,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#starting-a-project" id="toc-starting-a-project" class="nav-link active" data-scroll-target="#starting-a-project">Starting a project</a>
+  <li><a href="#structure" id="toc-structure" class="nav-link active" data-scroll-target="#structure">Structure</a>
   <ul class="collapse">
   <li><a href="#language-agnostic-project-elements-essential" id="toc-language-agnostic-project-elements-essential" class="nav-link" data-scroll-target="#language-agnostic-project-elements-essential">Language-agnostic project elements (essential):</a></li>
-  <li><a href="#r-specific-additions-basic-version" id="toc-r-specific-additions-basic-version" class="nav-link" data-scroll-target="#r-specific-additions-basic-version">R-specific additions (basic version)</a></li>
-  <li><a href="#python-specific-additions-basic-version" id="toc-python-specific-additions-basic-version" class="nav-link" data-scroll-target="#python-specific-additions-basic-version">Python-specific additions (basic version)</a></li>
   </ul></li>
+  <li><a href="#virtual-environment" id="toc-virtual-environment" class="nav-link" data-scroll-target="#virtual-environment">Virtual Environment</a></li>
   </ul>
 </nav>
     </div>
@@ -217,8 +216,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="starting-a-project" class="level2">
-<h2 class="anchored" data-anchor-id="starting-a-project">Starting a project</h2>
+<section id="structure" class="level2">
+<h2 class="anchored" data-anchor-id="structure">Structure</h2>
 <p>All successful data science projects begin with a semi-rigorous file structure<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
 <p>Recommended reading:</p>
 <ul>
@@ -244,9 +243,10 @@ ul.task-list li input[type="checkbox"] {
 <p><code>/reports</code> contains presentation materials you intend to share (e.g., LaTeX, Quarto, .pdf, .docx)</p>
 <p><code>README.md</code> describes essential information about the project and its data repository</p>
 <p><code>LICENSE.md</code> is a standardized file describing how your code may be used.</p>
-</section>
-<section id="r-specific-additions-basic-version" class="level3">
-<h3 class="anchored" data-anchor-id="r-specific-additions-basic-version">R-specific additions (basic version)</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Python</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <pre><code>.
 ├── {project-name}.Rproj
 ├── R
@@ -256,18 +256,31 @@ ul.task-list li input[type="checkbox"] {
 <p>/{}.Rproj` file – basic collection of settings interpreted by RStudio. Not strictly necessary, but handy.</p>
 <p><code>/renv</code> and <code>renv.lock</code> are environment files created by the package <a href="https://rstudio.github.io/renv/"><code>renv</code></a>. More on virtual environments later.</p>
 <p><code>/R</code> contains R scripts where the analysis “actually happens.”</p>
-</section>
-<section id="python-specific-additions-basic-version" class="level3">
-<h3 class="anchored" data-anchor-id="python-specific-additions-basic-version">Python-specific additions (basic version)</h3>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <pre><code>.
 ├── environment.yml
 ├── src
 │&nbsp;&nbsp; └── {load_data}.py</code></pre>
+</div>
+</div>
+</div>
 <p><code>/environment.yml</code> is a “frozen” file created by the library <a href="https://docs.conda.io/projects/conda/en/stable/user-guide/tasks/manage-environments.html"><code>conda</code></a>. More on virtual environments later.</p>
 <p><code>/src</code> contains Python scripts where the analysis “actually happens.”</p>
-
-
 </section>
+</section>
+<section id="virtual-environment" class="level2">
+<h2 class="anchored" data-anchor-id="virtual-environment">Virtual Environment</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">R</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+
+</div>
+</div>
+</div>
+
+
 </section>
 
 

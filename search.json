@@ -1,5 +1,96 @@
 [
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "NERVE Lab Data Management",
+    "section": "",
+    "text": "Current path for UVM VACC users: /users/a/j/ajbarrow/scratch/data\nDatasets are all BIDS compliant (at least in structure), with one notable exception: .parquet files are included in addition to .tsv files where appropriate.\nAll data come from the NBCD Data Hub."
+  },
+  {
+    "objectID": "index.html#hbcd",
+    "href": "index.html#hbcd",
+    "title": "NERVE Lab Data Management",
+    "section": "HBCD",
+    "text": "HBCD\n\nRelease Docs\nData Dictionary (DEAP)\nVolkow et al. (2024)\nDevelopmental Cognitive Neuroscience Special Issue\n\n\n1.0\nCitation:\n@misc{https://doi.org/10.82525/qv5x-qx11,\n  doi = {10.82525/QV5X-QX11},\n  url = {https://nbdc-datahub.org/hbcd-release-1-0},\n  author = {Chambers,  C and Nelson,  C and Dale,  A and Fair,  D and Smyser,  C and Acheson,  A and Bakhireva,  L and Bandoli,  G and Bell,  MA and Berry,  U and Bogdan,  R and Bosquet Enlow,  M and Coles,  C and Croff,  J and Cutting,  L and Dean,  D and DeMauro,  S and Engel,  S and Fox,  N and Gahagan,  S and Gao,  W and Garavan,  H and Georgieff,  M and Graham,  A and Grant,  E and Gregory,  K and Gurka,  K and Gurka,  M and Hays Grudo,  J and Hosig,  K and Howell,  B and Huang,  H and Johnson,  S and Jones Harden,  B and Kable,  J and Kaufman,  J and Levitt,  P and Lin,  W and McKelvey,  L and Merhar,  S and Morris,  A and Nagel,  B and Newman,  S and Newsom,  C and Norton,  E and Osmundson,  S and Ou,  X and Pekar,  J and Peralta-Carcelen,  M and Perez-Edgar,  K and Poehlmann-Tynan,  J and Potter,  A and Riggins,  T and Rogers,  C and Satin,  A and Scott,  L and Shenberger,  J and Shuffrey,  L and Smith,  B and Smith,  L and Stamilio,  D and Sullivan,  E and Thomason,  M and Vannest,  J and Volk,  H and Wakschlag,  L and Wilson,  S and Wisnowski,  J and Yerby,  L and Zgierska,  A and Zilverstand,  A},\n  title = {HBCD Study Data Release 1.0},\n  publisher = {Lasso Informatics US Inc},\n  year = {2025}\n}\nStructure:\nHBCD/1.0/\n|__ rawdata/ \n|   |__ phenotype/     # Tabulated Data (demographics, visit info, behavior, etc.)\n|   |   |__ par_visit_data.*\n|   |   |__ sed_basic_demographics.*\n|   |   |__ &lt;instrument_name&gt;.*\n|   |\n|   |__ sub-&lt;label&gt;/   # Raw File-Based Data (MRI, EEG, etc.)\n|   |   |__ sub-&lt;label&gt;_sessions.tsv\n|   |   |__ sub-&lt;label&gt;_sessions.json\n|   |   |__ ses-&lt;label&gt;/\n|   |       |__ anat/\n|   |       |__ dwi/\n|   |       |__ eeg/\n|   |       |__ fmap/\n|   |       |__ func/\n|   |       |__ motion/\n|   |       |__ mrs/\n|   |       |__ sub-&lt;label&gt;_ses-&lt;label&gt;_scans.tsv\n|   |       |__ sub-&lt;label&gt;_ses-&lt;label&gt;_scans.json\n|   |\n|   |__ dataset_description.json\n|   |__ participants.tsv\n|   |__ participants.json \n|\n|__ derivatives/        # Processed File-Based Data (MRI, EEG, etc.)\n    |__ bibsnet/\n    |__ hbcd_motion/\n    |__ made/\n    |__ mriqc/\n    |__ nibabies/\n    |__ osprey/\n    |__ qmri_postproc/\n    |__ qsiprep/\n    |__ qsirecon/\n    |__ symri/\n    |__ xcp_d/\n\n\nTotal Subjects: 602\n\n\n\n\n| session   |   anat |   dwi |   eeg |   fmap |   func |   motion |   mrs |\n|:----------|-------:|------:|------:|-------:|-------:|---------:|------:|\n| ses-V02   |    546 |   483 |     0 |    508 |    513 |      497 |   302 |\n| ses-V03   |     75 |    63 |    81 |     71 |     71 |       82 |    38 |"
+  },
+  {
+    "objectID": "index.html#abcd",
+    "href": "index.html#abcd",
+    "title": "NERVE Lab Data Management",
+    "section": "ABCD",
+    "text": "ABCD\n\nABCD Wiki\nData Structure\nData Dictionary (DEAP)\n\n\n6.0\nCitation\n@misc{https://doi.org/10.82525/jy7n-g441,\n  doi = {10.82525/JY7N-G441},\n  url = {https://nbdc-datahub.org/abcd-release-6-0},\n  author = {Jernigan,  Terry L. and Brown,  Sandra A. and Dale,  Anders M. and Tapert,  Susan F. and Sowell,  Elizabeth R. and Herting,  Megan and Laird,  Angela and Gonzalez,  Raul and Squeglia,  Lindsay and Gray,  Kevin and Paulus,  Martin P. and Aupperle,  Robin and Feldstein Ewing,  Sarah W. and Nagel,  Bonnie J. and Fair,  Damien A. and Baker,  Fiona and M\\\"{u}ller Oehring,  Eva and Bookheimer,  Susan Y. and Dapretto,  Mirella and Jacobus,  Joanna and Wilson,  Sylia and Banich,  Marie T. and Cottler,  Linda B. and Nixon,  Sara Jo and Ernst,  Thomas M. and Chang,  Linda and Heitzeg,  Mary M. and Sripada,  Chandra and Luciana,  Monica M. and Friedman,  Naomi and Clark,  Duncan B. and Luna,  Beatriz and Foxe,  John and Freedman,  Edward and Yurgelun-Todd,  Deborah A. and Renshaw,  Perry F. and Potter,  Alexandra and Garavan,  Hugh P. and Lisdahl,  Krista and Larson,  Christine and Bjork,  James M. and Neale,  Michael C. and Heath,  Andrew C. and Barch,  Deanna M. and Madden,  Pamela A. and Casey,  Betty J. and Baskin-Sommers,  Arielle and Gee,  Dylan},\n  title = {ABCD Study(R) Data Release 6.0},\n  publisher = {Lasso Informatics US Inc},\n  year = {2025}\n}\nNote: We only maintain a subset of available ABCD data due to storage constraints. Please get in touch if there is information you’re missing.\nABCD/6.0/\n    dairc\n    └── rawdata\n        ├── phenotype\n        │   ├── &lt;table_name&gt;.json\n        │   ├── &lt;table_name&gt;.parquet\n        │   ├── &lt;table_name&gt;.tsv\n        │   └── ...\n        ├── sub-&lt;participant&gt;\n        │   ├── ses-&lt;event&gt;\n        │   └── ...\n        ├── ...\n        ├── dataset_description.json\n        ├── participants.json\n        ├── participants.tsv\n        ├── scans.json\n        ├── sessions.json\n        ├── task-&lt;experiment&gt;_beh.json\n        └── ...\n    └── concat\n        └── substance_use\n            └── tlfb\n\n\n\nTotal Subjects: 11868\n\n\n\n\n| session   |   beh |\n|:----------|------:|\n| ses-00A   | 11852 |\n| ses-01A   |  9009 |\n| ses-02A   | 10855 |\n| ses-03A   |  8482 |\n| ses-04A   |  9644 |\n| ses-05A   |  8615 |\n| ses-06A   |  5014 |"
+  },
+  {
+    "objectID": "guide.html",
+    "href": "guide.html",
+    "title": "Data Management and Analysis Guides",
+    "section": "",
+    "text": "A series of guides that might help some people (sometimes) who work with ABCD and HBCD data.",
+    "crumbs": [
+      "Guide",
+      "Guides"
+    ]
+  },
+  {
+    "objectID": "guide.html#introduction",
+    "href": "guide.html#introduction",
+    "title": "Data Management and Analysis Guides",
+    "section": "Introduction",
+    "text": "Introduction\nThis website is meant to serve as an introduction to:\n\nloading and analyzing large neuroimaging datasets at UVM\ndata science project best practices\ndoing reproducible science.\n\nThis guide presumes the following:\n\nyou have an account with the Vermont Advanced Computing Center (VACC)\nyou are using one of the following operating systems:\n\nLinux (any distribution)\nmacOS\nWindows Subsystem for Linux (WSL)",
+    "crumbs": [
+      "Guide",
+      "Guides"
+    ]
+  },
+  {
+    "objectID": "starting_projects.html",
+    "href": "starting_projects.html",
+    "title": "Starting a Project",
+    "section": "",
+    "text": "All successful data science projects begin with a semi-rigorous file structure1.\nRecommended reading:\n\ncookiecutter data science\nkedro\n\nNote: these are opinions. They’re best-practice-informed opinions, but still opinions.\n\n\n.\n├── data\n│   ├── processed\n│   └── raw\n├── LICENSE.md\n├── models\n├── notebooks\n├── README.md\n└── reports\n    └── figures\n/data contains (1) actual data files, or (2) symbolic links to data files (more on that later). /data/raw is data your code hasn’t touched. /data/processed are derivatives created within the current project.\n/models contains fitted/trained serialized model objects (e.g., Python .pkl or R .rds files)\n/notebooks contains exploratory and prototyping code written in Jupyter or R Markdown/Quarto notebooks. This is generally not where the analysis “actually happens.”\n/reports contains presentation materials you intend to share (e.g., LaTeX, Quarto, .pdf, .docx)\nREADME.md describes essential information about the project and its data repository\nLICENSE.md is a standardized file describing how your code may be used.\n\nRPython\n\n\n.\n├── {project-name}.Rproj\n├── R\n│   └── {load_data}.R\n├── renv\n├── renv.lock\n/{}.Rproj` file – basic collection of settings interpreted by RStudio. Not strictly necessary, but handy.\n/renv and renv.lock are environment files created by the package renv. More on virtual environments later.\n/R contains R scripts where the analysis “actually happens.”\n\n\n.\n├── environment.yml\n├── src\n│   └── {load_data}.py\n\n\n\n/environment.yml is a “frozen” file created by the library conda. More on virtual environments later.\n/src contains Python scripts where the analysis “actually happens.”",
+    "crumbs": [
+      "Guide",
+      "Reproducible Analysis",
+      "Starting a Project"
+    ]
+  },
+  {
+    "objectID": "starting_projects.html#structure",
+    "href": "starting_projects.html#structure",
+    "title": "Starting a Project",
+    "section": "",
+    "text": "All successful data science projects begin with a semi-rigorous file structure1.\nRecommended reading:\n\ncookiecutter data science\nkedro\n\nNote: these are opinions. They’re best-practice-informed opinions, but still opinions.\n\n\n.\n├── data\n│   ├── processed\n│   └── raw\n├── LICENSE.md\n├── models\n├── notebooks\n├── README.md\n└── reports\n    └── figures\n/data contains (1) actual data files, or (2) symbolic links to data files (more on that later). /data/raw is data your code hasn’t touched. /data/processed are derivatives created within the current project.\n/models contains fitted/trained serialized model objects (e.g., Python .pkl or R .rds files)\n/notebooks contains exploratory and prototyping code written in Jupyter or R Markdown/Quarto notebooks. This is generally not where the analysis “actually happens.”\n/reports contains presentation materials you intend to share (e.g., LaTeX, Quarto, .pdf, .docx)\nREADME.md describes essential information about the project and its data repository\nLICENSE.md is a standardized file describing how your code may be used.\n\nRPython\n\n\n.\n├── {project-name}.Rproj\n├── R\n│   └── {load_data}.R\n├── renv\n├── renv.lock\n/{}.Rproj` file – basic collection of settings interpreted by RStudio. Not strictly necessary, but handy.\n/renv and renv.lock are environment files created by the package renv. More on virtual environments later.\n/R contains R scripts where the analysis “actually happens.”\n\n\n.\n├── environment.yml\n├── src\n│   └── {load_data}.py\n\n\n\n/environment.yml is a “frozen” file created by the library conda. More on virtual environments later.\n/src contains Python scripts where the analysis “actually happens.”",
+    "crumbs": [
+      "Guide",
+      "Reproducible Analysis",
+      "Starting a Project"
+    ]
+  },
+  {
+    "objectID": "starting_projects.html#virtual-environment",
+    "href": "starting_projects.html#virtual-environment",
+    "title": "Starting a Project",
+    "section": "Virtual Environment",
+    "text": "Virtual Environment\n\nR",
+    "crumbs": [
+      "Guide",
+      "Reproducible Analysis",
+      "Starting a Project"
+    ]
+  },
+  {
+    "objectID": "starting_projects.html#footnotes",
+    "href": "starting_projects.html#footnotes",
+    "title": "Starting a Project",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nMany doomed projects also begin with semi-rigorous data structures.↩︎",
+    "crumbs": [
+      "Guide",
+      "Reproducible Analysis",
+      "Starting a Project"
+    ]
+  },
+  {
     "objectID": "using_git.html",
     "href": "using_git.html",
     "title": "Git and GitHub",
@@ -132,26 +223,25 @@
     ]
   },
   {
-    "objectID": "guide.html",
-    "href": "guide.html",
-    "title": "Data Management and Analysis Guides",
+    "objectID": "vacc.html",
+    "href": "vacc.html",
+    "title": "High-Performance Computing",
     "section": "",
-    "text": "A series of guides that might help some people (sometimes) who work with ABCD and HBCD data.",
-    "crumbs": [
-      "Guide",
-      "Guides"
-    ]
+    "text": "Nodes (computers)\nEach node is, itself, very, very powerful.\nThere are lots of nodes (72 at UVM), and they’re linked together into a cluster\nEach of these nodes is, itself, very powerful\n\nUVM’s HPC cluster is the Vermont Advanced Computing Center (VACC).\n\n\n\nClusters typically run Linux\nThey typically don’t have graphic user interfaces (GUIs)\nThey involve login nodes to which you connect directly, and compute nodes where the work gets done\nThey often have some kind of scheduler. At UVM, we use SLURM."
   },
   {
-    "objectID": "guide.html#introduction",
-    "href": "guide.html#introduction",
-    "title": "Data Management and Analysis Guides",
-    "section": "Introduction",
-    "text": "Introduction\nThis website is meant to serve as an introduction to:\n\nloading and analyzing large neuroimaging datasets at UVM\ndata science project best practices\ndoing reproducible science.\n\nThis guide presumes the following:\n\nyou have an account with the Vermont Advanced Computing Center (VACC)\nyou are using one of the following operating systems:\n\nLinux (any distribution)\nmacOS\nWindows Subsystem for Linux (WSL)",
-    "crumbs": [
-      "Guide",
-      "Guides"
-    ]
+    "objectID": "vacc.html#what-is-high-performance-computing-hpc",
+    "href": "vacc.html#what-is-high-performance-computing-hpc",
+    "title": "High-Performance Computing",
+    "section": "",
+    "text": "Nodes (computers)\nEach node is, itself, very, very powerful.\nThere are lots of nodes (72 at UVM), and they’re linked together into a cluster\nEach of these nodes is, itself, very powerful\n\nUVM’s HPC cluster is the Vermont Advanced Computing Center (VACC).\n\n\n\nClusters typically run Linux\nThey typically don’t have graphic user interfaces (GUIs)\nThey involve login nodes to which you connect directly, and compute nodes where the work gets done\nThey often have some kind of scheduler. At UVM, we use SLURM."
+  },
+  {
+    "objectID": "vacc.html#using-the-vacc",
+    "href": "vacc.html#using-the-vacc",
+    "title": "High-Performance Computing",
+    "section": "Using the VACC",
+    "text": "Using the VACC\n\nPrerequisites:\n\nYou have a VACC account.\nYou have access to a terminal (e.g., through macOS, Linux, or Windows Subsystem for Linux)\n\nThere are several was to interface with the VACC:\n\ndirect access to a login node’s shell through SSH\nusing Open OnDemand, a browser-based interface which provides\n\nfile management\njob management and accounting\na command-line interface\ninteractive apps (e.g., Jupyter Notebook, RStudio Server, Matlab)\n\nusing “remote development” features of VSCode or a similar IDE (this is actually just 1. but different)\n\n\n\nCommand-line shell and SSH"
   },
   {
     "objectID": "access_data.html",
@@ -211,42 +301,6 @@
       "Guide",
       "Accessing Data",
       "UVM-Hosted Data"
-    ]
-  },
-  {
-    "objectID": "starting_projects.html",
-    "href": "starting_projects.html",
-    "title": "Starting a Project",
-    "section": "",
-    "text": "All successful data science projects begin with a semi-rigorous file structure1.\nRecommended reading:\n\ncookiecutter data science\nkedro\n\nNote: these are opinions. They’re best-practice-informed opinions, but still opinions.\n\n\n.\n├── data\n│   ├── processed\n│   └── raw\n├── LICENSE.md\n├── models\n├── notebooks\n├── README.md\n└── reports\n    └── figures\n/data contains (1) actual data files, or (2) symbolic links to data files (more on that later). /data/raw is data your code hasn’t touched. /data/processed are derivatives created within the current project.\n/models contains fitted/trained serialized model objects (e.g., Python .pkl or R .rds files)\n/notebooks contains exploratory and prototyping code written in Jupyter or R Markdown/Quarto notebooks. This is generally not where the analysis “actually happens.”\n/reports contains presentation materials you intend to share (e.g., LaTeX, Quarto, .pdf, .docx)\nREADME.md describes essential information about the project and its data repository\nLICENSE.md is a standardized file describing how your code may be used.\n\n\n\n.\n├── {project-name}.Rproj\n├── R\n│   └── {load_data}.R\n├── renv\n├── renv.lock\n/{}.Rproj` file – basic collection of settings interpreted by RStudio. Not strictly necessary, but handy.\n/renv and renv.lock are environment files created by the package renv. More on virtual environments later.\n/R contains R scripts where the analysis “actually happens.”\n\n\n\n.\n├── environment.yml\n├── src\n│   └── {load_data}.py\n/environment.yml is a “frozen” file created by the library conda. More on virtual environments later.\n/src contains Python scripts where the analysis “actually happens.”",
-    "crumbs": [
-      "Guide",
-      "Reproducible Analysis",
-      "Starting a Project"
-    ]
-  },
-  {
-    "objectID": "starting_projects.html#starting-a-project",
-    "href": "starting_projects.html#starting-a-project",
-    "title": "Starting a Project",
-    "section": "",
-    "text": "All successful data science projects begin with a semi-rigorous file structure1.\nRecommended reading:\n\ncookiecutter data science\nkedro\n\nNote: these are opinions. They’re best-practice-informed opinions, but still opinions.\n\n\n.\n├── data\n│   ├── processed\n│   └── raw\n├── LICENSE.md\n├── models\n├── notebooks\n├── README.md\n└── reports\n    └── figures\n/data contains (1) actual data files, or (2) symbolic links to data files (more on that later). /data/raw is data your code hasn’t touched. /data/processed are derivatives created within the current project.\n/models contains fitted/trained serialized model objects (e.g., Python .pkl or R .rds files)\n/notebooks contains exploratory and prototyping code written in Jupyter or R Markdown/Quarto notebooks. This is generally not where the analysis “actually happens.”\n/reports contains presentation materials you intend to share (e.g., LaTeX, Quarto, .pdf, .docx)\nREADME.md describes essential information about the project and its data repository\nLICENSE.md is a standardized file describing how your code may be used.\n\n\n\n.\n├── {project-name}.Rproj\n├── R\n│   └── {load_data}.R\n├── renv\n├── renv.lock\n/{}.Rproj` file – basic collection of settings interpreted by RStudio. Not strictly necessary, but handy.\n/renv and renv.lock are environment files created by the package renv. More on virtual environments later.\n/R contains R scripts where the analysis “actually happens.”\n\n\n\n.\n├── environment.yml\n├── src\n│   └── {load_data}.py\n/environment.yml is a “frozen” file created by the library conda. More on virtual environments later.\n/src contains Python scripts where the analysis “actually happens.”",
-    "crumbs": [
-      "Guide",
-      "Reproducible Analysis",
-      "Starting a Project"
-    ]
-  },
-  {
-    "objectID": "starting_projects.html#footnotes",
-    "href": "starting_projects.html#footnotes",
-    "title": "Starting a Project",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nMany doomed projects also begin with semi-rigorous data structures.↩︎",
-    "crumbs": [
-      "Guide",
-      "Reproducible Analysis",
-      "Starting a Project"
     ]
   }
 ]

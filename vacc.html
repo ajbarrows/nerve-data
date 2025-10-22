@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Management and Analysis Guides – NERVE Lab Data Management</title>
+<title>High-Performance Computing – NERVE Lab Data Management</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -72,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -94,7 +94,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./guide.html" aria-current="page"> 
+    <a class="nav-link" href="./guide.html"> 
 <span class="menu-text">Guide</span></a>
   </li>  
 </ul>
@@ -113,80 +113,25 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./guide.html">Guides</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./guide.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Guides</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Accessing Data</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./access_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">UVM-Hosted Data</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Reproducible Analysis</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./starting_projects.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Starting a Project</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./using_git.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Git and GitHub</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#what-is-high-performance-computing-hpc" id="toc-what-is-high-performance-computing-hpc" class="nav-link active" data-scroll-target="#what-is-high-performance-computing-hpc">What is high-performance computing (HPC)?</a>
+  <ul class="collapse">
+  <li><a href="#things-to-know-about-hpc-in-general" id="toc-things-to-know-about-hpc-in-general" class="nav-link" data-scroll-target="#things-to-know-about-hpc-in-general">Things to know about HPC in general:</a></li>
+  </ul></li>
+  <li><a href="#using-the-vacc" id="toc-using-the-vacc" class="nav-link" data-scroll-target="#using-the-vacc">Using the VACC</a>
+  <ul class="collapse">
+  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites">Prerequisites:</a></li>
+  <li><a href="#command-line-shell-and-ssh" id="toc-command-line-shell-and-ssh" class="nav-link" data-scroll-target="#command-line-shell-and-ssh">Command-line shell and SSH</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -195,7 +140,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Data Management and Analysis Guides</h1>
+<h1 class="title">High-Performance Computing</h1>
+<p class="subtitle lead">UVM Vermont Advanced Computing Center (VACC)</p>
 </div>
 
 
@@ -212,27 +158,51 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>A series of guides that might help some people (sometimes) who work with ABCD and HBCD data.</p>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>This website is meant to serve as an introduction to:</p>
+<section id="what-is-high-performance-computing-hpc" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-high-performance-computing-hpc">What is <a href="https://en.wikipedia.org/wiki/High-performance_computing">high-performance computing (HPC)</a>?</h2>
 <ul>
-<li>loading and analyzing large neuroimaging datasets at UVM</li>
-<li>data science project best practices</li>
-<li>doing reproducible science.</li>
+<li><strong>Nodes</strong> (computers)</li>
+<li>Each node is, itself, very, very powerful.</li>
+<li>There are lots of nodes (72 at UVM), and they’re linked together into a <strong>cluster</strong></li>
+<li>Each of these nodes is, itself, very powerful</li>
 </ul>
-<p>This guide presumes the following:</p>
+<p>UVM’s HPC cluster is the <a href="https://www.uvm.edu/vacc">Vermont Advanced Computing Center (VACC)</a>.</p>
+<section id="things-to-know-about-hpc-in-general" class="level3">
+<h3 class="anchored" data-anchor-id="things-to-know-about-hpc-in-general">Things to know about HPC in general:</h3>
 <ul>
-<li>you have an account with the <a href="https://www.uvm.edu/vacc">Vermont Advanced Computing Center (VACC)</a></li>
-<li>you are using one of the following operating systems:
+<li>Clusters typically run Linux</li>
+<li>They typically don’t have graphic user interfaces (GUIs)</li>
+<li>They involve <strong>login nodes</strong> to which you connect directly, and <strong>compute nodes</strong> where the work gets done</li>
+<li>They often have some kind of <strong>scheduler</strong>. At UVM, we use <a href="https://slurm.schedmd.com">SLURM</a>.</li>
+</ul>
+</section>
+</section>
+<section id="using-the-vacc" class="level2">
+<h2 class="anchored" data-anchor-id="using-the-vacc">Using the VACC</h2>
+<section id="prerequisites" class="level3">
+<h3 class="anchored" data-anchor-id="prerequisites">Prerequisites:</h3>
 <ul>
-<li>Linux (any distribution)</li>
-<li>macOS</li>
-<li><a href="https://learn.microsoft.com/en-us/windows/wsl/install">Windows Subsystem for Linux (WSL)</a></li>
+<li>You have a <a href="https://www.uvm.edu/vacc/request-allocation">VACC account</a>.</li>
+<li>You have access to a terminal (e.g., through macOS, Linux, or Windows Subsystem for Linux)</li>
+</ul>
+<p>There are several was to interface with the VACC:</p>
+<ol type="1">
+<li>direct access to a login node’s shell through SSH</li>
+<li>using <a href="https://www.uvm.edu/vacc/docs/start_guide/ondemand/">Open OnDemand</a>, a browser-based interface which provides
+<ul>
+<li>file management</li>
+<li>job management and accounting</li>
+<li>a command-line interface</li>
+<li>interactive apps (e.g., Jupyter Notebook, RStudio Server, Matlab)</li>
 </ul></li>
-</ul>
+<li>using “remote development” features of VSCode or a similar IDE (this is actually just 1. but different)</li>
+</ol>
+</section>
+<section id="command-line-shell-and-ssh" class="level3">
+<h3 class="anchored" data-anchor-id="command-line-shell-and-ssh">Command-line shell and SSH</h3>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
