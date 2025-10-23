@@ -20,17 +20,15 @@ All data come from the [NBCD Data Hub](https://www.nbdc-datahub.org).
 - [Developmental Cognitive Neuroscience Special Issue](https://www.sciencedirect.com/special-issue/10VNSS1BBLV)
 
 
-### 1.0
+### 1.1
 
-
-Citation:
-
+Citation
 ```
-@misc{https://doi.org/10.82525/qv5x-qx11,
-  doi = {10.82525/QV5X-QX11},
-  url = {https://nbdc-datahub.org/hbcd-release-1-0},
-  author = {Chambers,  C and Nelson,  C and Dale,  A and Fair,  D and Smyser,  C and Acheson,  A and Bakhireva,  L and Bandoli,  G and Bell,  MA and Berry,  U and Bogdan,  R and Bosquet Enlow,  M and Coles,  C and Croff,  J and Cutting,  L and Dean,  D and DeMauro,  S and Engel,  S and Fox,  N and Gahagan,  S and Gao,  W and Garavan,  H and Georgieff,  M and Graham,  A and Grant,  E and Gregory,  K and Gurka,  K and Gurka,  M and Hays Grudo,  J and Hosig,  K and Howell,  B and Huang,  H and Johnson,  S and Jones Harden,  B and Kable,  J and Kaufman,  J and Levitt,  P and Lin,  W and McKelvey,  L and Merhar,  S and Morris,  A and Nagel,  B and Newman,  S and Newsom,  C and Norton,  E and Osmundson,  S and Ou,  X and Pekar,  J and Peralta-Carcelen,  M and Perez-Edgar,  K and Poehlmann-Tynan,  J and Potter,  A and Riggins,  T and Rogers,  C and Satin,  A and Scott,  L and Shenberger,  J and Shuffrey,  L and Smith,  B and Smith,  L and Stamilio,  D and Sullivan,  E and Thomason,  M and Vannest,  J and Volk,  H and Wakschlag,  L and Wilson,  S and Wisnowski,  J and Yerby,  L and Zgierska,  A and Zilverstand,  A},
-  title = {HBCD Study Data Release 1.0},
+@misc{https://doi.org/10.82525/mb85-d528,
+  doi = {10.82525/MB85-D528},
+  url = {https://nbdc-datahub.org/hbcd-release-1-1},
+  author = {Chambers,  C and Nelson,  C and Dale,  A and Fair,  D and Smyser,  C and Acheson,  A and Bakhireva,  L and Bandoli,  G and Bell,  MA and Berry,  U and Bogdan,  R and Bosquet Enlow,  M and Coles,  C and Croff,  J and Cutting,  L and Dapretto,  M and Dean,  D and DeMauro,  S and Engel,  S and Fox,  N and Gahagan,  S and Gao,  W and Garavan,  H and Georgieff,  M and Graham,  A and Grant,  E and Gregory,  K and Gurka,  K and Gurka,  M and Hays Grudo,  J and Hosig,  K and Howell,  B and Huang,  H and Johnson,  S and Jones Harden,  B and Kable,  J and Kaufman,  J and Levitt,  P and Lin,  W and McKelvey,  L and Merhar,  S and Morris,  A and Nagel,  B and Newman,  S and Newsom,  C and Norton,  E and Osmundson,  S and Ou,  X and Pekar,  J and Peralta-Carcelen,  M and Perez-Edgar,  K and Poehlmann-Tynan,  J and Potter,  A and Riggins,  T and Rogers,  C and Satin,  A and Scott,  L and Shenberger,  J and Shuffrey,  L and Smith,  B and Smith,  L and Stamilio,  D and Sullivan,  E and Thomason,  M and Vannest,  J and Volk,  H and Wakschlag,  L and Wilson,  S and Wisnowski,  J and Yerby,  L and Zgierska,  A and Zilverstand,  A},
+  title = {HBCD Study Data Release 1.1},
   publisher = {Lasso Informatics US Inc},
   year = {2025}
 }
@@ -38,8 +36,12 @@ Citation:
 
 Structure:
 
+::: {.callout-caution}
+See [release notes](https://docs.hbcdstudy.org/latest/changelog/releasenotes/#version-r11) for changes from HBCD 1.0.
+:::
+
 ```
-HBCD/1.0/
+HBCD/1.1/
 |__ rawdata/ 
 |   |__ phenotype/     # Tabulated Data (demographics, visit info, behavior, etc.)
 |   |   |__ par_visit_data.*
@@ -172,15 +174,79 @@ def scan_bids_directory(bids_dir, default_ses='ses-01'):
     return df, summary_table, df['subject'].nunique()
 
 
-df, summary_table, n_subjects = scan_bids_directory("../HBCD/1.0/rawdata/")
-
-print(f"Total Subjects: {n_subjects}")
+df, summary_table, n_subjects = scan_bids_directory("../HBCD/1.1/rawdata/")
 ```
 
 
 ```{python}
+print(f"Total Subjects: {n_subjects}")
 print(summary_table.to_markdown())
 ```
+
+
+
+### 1.0
+
+::: {.callout-note collapse="true" title="1.0" appearance="simple"}
+
+Citation:
+
+```
+@misc{https://doi.org/10.82525/qv5x-qx11,
+  doi = {10.82525/QV5X-QX11},
+  url = {https://nbdc-datahub.org/hbcd-release-1-0},
+  author = {Chambers,  C and Nelson,  C and Dale,  A and Fair,  D and Smyser,  C and Acheson,  A and Bakhireva,  L and Bandoli,  G and Bell,  MA and Berry,  U and Bogdan,  R and Bosquet Enlow,  M and Coles,  C and Croff,  J and Cutting,  L and Dean,  D and DeMauro,  S and Engel,  S and Fox,  N and Gahagan,  S and Gao,  W and Garavan,  H and Georgieff,  M and Graham,  A and Grant,  E and Gregory,  K and Gurka,  K and Gurka,  M and Hays Grudo,  J and Hosig,  K and Howell,  B and Huang,  H and Johnson,  S and Jones Harden,  B and Kable,  J and Kaufman,  J and Levitt,  P and Lin,  W and McKelvey,  L and Merhar,  S and Morris,  A and Nagel,  B and Newman,  S and Newsom,  C and Norton,  E and Osmundson,  S and Ou,  X and Pekar,  J and Peralta-Carcelen,  M and Perez-Edgar,  K and Poehlmann-Tynan,  J and Potter,  A and Riggins,  T and Rogers,  C and Satin,  A and Scott,  L and Shenberger,  J and Shuffrey,  L and Smith,  B and Smith,  L and Stamilio,  D and Sullivan,  E and Thomason,  M and Vannest,  J and Volk,  H and Wakschlag,  L and Wilson,  S and Wisnowski,  J and Yerby,  L and Zgierska,  A and Zilverstand,  A},
+  title = {HBCD Study Data Release 1.0},
+  publisher = {Lasso Informatics US Inc},
+  year = {2025}
+}
+```
+
+Structure:
+
+```
+HBCD/1.0/
+|__ rawdata/ 
+|   |__ phenotype/     # Tabulated Data (demographics, visit info, behavior, etc.)
+|   |   |__ par_visit_data.*
+|   |   |__ sed_basic_demographics.*
+|   |   |__ <instrument_name>.*
+|   |
+|   |__ sub-<label>/   # Raw File-Based Data (MRI, EEG, etc.)
+|   |   |__ sub-<label>_sessions.tsv
+|   |   |__ sub-<label>_sessions.json
+|   |   |__ ses-<label>/
+|   |       |__ anat/
+|   |       |__ dwi/
+|   |       |__ eeg/
+|   |       |__ fmap/
+|   |       |__ func/
+|   |       |__ motion/
+|   |       |__ mrs/
+|   |       |__ sub-<label>_ses-<label>_scans.tsv
+|   |       |__ sub-<label>_ses-<label>_scans.json
+|   |
+|   |__ dataset_description.json
+|   |__ participants.tsv
+|   |__ participants.json 
+|
+|__ derivatives/        # Processed File-Based Data (MRI, EEG, etc.)
+    |__ bibsnet/
+    |__ hbcd_motion/
+    |__ made/
+    |__ mriqc/
+    |__ nibabies/
+    |__ osprey/
+    |__ qmri_postproc/
+    |__ qsiprep/
+    |__ qsirecon/
+    |__ symri/
+    |__ xcp_d/
+```
+
+:::
+
+
 
 ## [ABCD](https://abcdstudy.org)
 

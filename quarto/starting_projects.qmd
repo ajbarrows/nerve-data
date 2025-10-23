@@ -2,7 +2,7 @@
 title: "Starting a Project"
 ---
 
-## Starting a project
+## Structure
 
 All successful data science projects begin with a semi-rigorous file structure[^1].
 
@@ -12,7 +12,6 @@ Recommended reading:
 - [kedro](https://docs.kedro.org/en/1.0.0/getting-started/course/)
 
 Note: these are opinions. They're best-practice-informed opinions, but still opinions.
-
 
 ### Language-agnostic project elements (essential):
 
@@ -41,7 +40,9 @@ Note: these are opinions. They're best-practice-informed opinions, but still opi
 
 `LICENSE.md` is a standardized file describing how your code may be used.
 
-### R-specific additions (basic version)
+::: {.panel-tabset}
+
+### R
 
 ```
 .
@@ -59,8 +60,7 @@ Note: these are opinions. They're best-practice-informed opinions, but still opi
 `/R` contains R scripts where the analysis "actually happens."
 
 
-### Python-specific additions (basic version)
-
+### Python
 
 ```
 .
@@ -68,10 +68,21 @@ Note: these are opinions. They're best-practice-informed opinions, but still opi
 ├── src
 │   └── {load_data}.py
 ```
+:::
 
 `/environment.yml` is a "frozen" file created by the library [`conda`](https://docs.conda.io/projects/conda/en/stable/user-guide/tasks/manage-environments.html). More on virtual environments later.
 
 `/src` contains Python scripts where the analysis "actually happens."
+
+## Virtual Environment
+
+::: {.panel-tabset}
+
+### R
+
+:::
+
+
 
 
 [^1]: Many doomed projects also begin with semi-rigorous data structures.

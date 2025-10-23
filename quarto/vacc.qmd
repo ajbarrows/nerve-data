@@ -1,0 +1,49 @@
+---
+title: "High-Performance Computing"
+subtitle: "UVM Vermont Advanced Computing Center (VACC)"
+---
+
+## What is [high-performance computing (HPC)](https://en.wikipedia.org/wiki/High-performance_computing)?
+
+- **Nodes** (computers)
+- Each node is, itself, very, very powerful.
+- There are lots of nodes (72 at UVM), and they're linked together into a **cluster**
+- Each of these nodes is, itself, very powerful
+
+
+UVM's HPC cluster is the [Vermont Advanced Computing Center (VACC)](https://www.uvm.edu/vacc). 
+
+### Things to know about HPC in general:
+
+- Clusters typically run Linux
+- They typically don't have graphic user interfaces (GUIs)
+- They involve **login nodes** to which you connect directly, and **compute nodes** where the work gets done
+- They often have some kind of **scheduler**. At UVM, we use [SLURM](https://slurm.schedmd.com).
+
+
+## Using the VACC
+
+### Prerequisites:
+- You have a [VACC account](https://www.uvm.edu/vacc/request-allocation).
+- You have access to a terminal (e.g., through macOS, Linux, or Windows Subsystem for Linux)
+
+
+There are several was to interface with the VACC:
+
+1. direct access to a login node's shell through SSH
+2. using [Open OnDemand](https://www.uvm.edu/vacc/docs/start_guide/ondemand/), a browser-based interface which provides
+    - file management
+    - job management and accounting
+    - a command-line interface
+    - interactive apps (e.g., Jupyter Notebook, RStudio Server, Matlab)
+3. using "remote development" features of VSCode or a similar IDE (this is actually just 1. but different)
+
+### Command-line shell and SSH
+
+
+
+
+
+
+
+
