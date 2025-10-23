@@ -125,11 +125,12 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#hbcd" id="toc-hbcd" class="nav-link active" data-scroll-target="#hbcd">HBCD</a>
   <ul class="collapse">
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">1.0</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">1.1</a></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1">1.0</a></li>
   </ul></li>
   <li><a href="#abcd" id="toc-abcd" class="nav-link" data-scroll-target="#abcd">ABCD</a>
   <ul class="collapse">
-  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1">6.0</a></li>
+  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2">6.0</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -168,7 +169,91 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://www.sciencedirect.com/special-issue/10VNSS1BBLV">Developmental Cognitive Neuroscience Special Issue</a></li>
 </ul>
 <section id="section" class="level3">
-<h3 class="anchored" data-anchor-id="section">1.0</h3>
+<h3 class="anchored" data-anchor-id="section">1.1</h3>
+<p>Citation</p>
+<pre><code>@misc{https://doi.org/10.82525/mb85-d528,
+  doi = {10.82525/MB85-D528},
+  url = {https://nbdc-datahub.org/hbcd-release-1-1},
+  author = {Chambers,  C and Nelson,  C and Dale,  A and Fair,  D and Smyser,  C and Acheson,  A and Bakhireva,  L and Bandoli,  G and Bell,  MA and Berry,  U and Bogdan,  R and Bosquet Enlow,  M and Coles,  C and Croff,  J and Cutting,  L and Dapretto,  M and Dean,  D and DeMauro,  S and Engel,  S and Fox,  N and Gahagan,  S and Gao,  W and Garavan,  H and Georgieff,  M and Graham,  A and Grant,  E and Gregory,  K and Gurka,  K and Gurka,  M and Hays Grudo,  J and Hosig,  K and Howell,  B and Huang,  H and Johnson,  S and Jones Harden,  B and Kable,  J and Kaufman,  J and Levitt,  P and Lin,  W and McKelvey,  L and Merhar,  S and Morris,  A and Nagel,  B and Newman,  S and Newsom,  C and Norton,  E and Osmundson,  S and Ou,  X and Pekar,  J and Peralta-Carcelen,  M and Perez-Edgar,  K and Poehlmann-Tynan,  J and Potter,  A and Riggins,  T and Rogers,  C and Satin,  A and Scott,  L and Shenberger,  J and Shuffrey,  L and Smith,  B and Smith,  L and Stamilio,  D and Sullivan,  E and Thomason,  M and Vannest,  J and Volk,  H and Wakschlag,  L and Wilson,  S and Wisnowski,  J and Yerby,  L and Zgierska,  A and Zilverstand,  A},
+  title = {HBCD Study Data Release 1.1},
+  publisher = {Lasso Informatics US Inc},
+  year = {2025}
+}</code></pre>
+<p>Structure:</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>See <a href="https://docs.hbcdstudy.org/latest/changelog/releasenotes/#version-r11">release notes</a> for changes from HBCD 1.0.</p>
+</div>
+</div>
+<pre><code>HBCD/1.1/
+|__ rawdata/ 
+|   |__ phenotype/     # Tabulated Data (demographics, visit info, behavior, etc.)
+|   |   |__ par_visit_data.*
+|   |   |__ sed_basic_demographics.*
+|   |   |__ &lt;instrument_name&gt;.*
+|   |
+|   |__ sub-&lt;label&gt;/   # Raw File-Based Data (MRI, EEG, etc.)
+|   |   |__ sub-&lt;label&gt;_sessions.tsv
+|   |   |__ sub-&lt;label&gt;_sessions.json
+|   |   |__ ses-&lt;label&gt;/
+|   |       |__ anat/
+|   |       |__ dwi/
+|   |       |__ eeg/
+|   |       |__ fmap/
+|   |       |__ func/
+|   |       |__ motion/
+|   |       |__ mrs/
+|   |       |__ sub-&lt;label&gt;_ses-&lt;label&gt;_scans.tsv
+|   |       |__ sub-&lt;label&gt;_ses-&lt;label&gt;_scans.json
+|   |
+|   |__ dataset_description.json
+|   |__ participants.tsv
+|   |__ participants.json 
+|
+|__ derivatives/        # Processed File-Based Data (MRI, EEG, etc.)
+    |__ bibsnet/
+    |__ hbcd_motion/
+    |__ made/
+    |__ mriqc/
+    |__ nibabies/
+    |__ osprey/
+    |__ qmri_postproc/
+    |__ qsiprep/
+    |__ qsirecon/
+    |__ symri/
+    |__ xcp_d/</code></pre>
+<div id="642ea5ea" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-stdout">
+<pre><code>Total Subjects: 602
+| session   |   anat |   dwi |   eeg |   fmap |   func |   motion |   mrs |
+|:----------|-------:|------:|------:|-------:|-------:|---------:|------:|
+| ses-V02   |    546 |   483 |     0 |    508 |    513 |      497 |   302 |
+| ses-V03   |     75 |    63 |    81 |     71 |     71 |       82 |    38 |</code></pre>
+</div>
+</div>
+</section>
+<section id="section-1" class="level3">
+<h3 class="anchored" data-anchor-id="section-1">1.0</h3>
+<div class="callout callout-style-simple callout-note callout-titled" title="1.0">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+1.0
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>Citation:</p>
 <pre><code>@misc{https://doi.org/10.82525/qv5x-qx11,
   doi = {10.82525/QV5X-QX11},
@@ -216,17 +301,7 @@ ul.task-list li input[type="checkbox"] {
     |__ qsirecon/
     |__ symri/
     |__ xcp_d/</code></pre>
-<div id="85e181e3" class="cell" data-execution_count="1">
-<div class="cell-output cell-output-stdout">
-<pre><code>Total Subjects: 602</code></pre>
 </div>
-</div>
-<div id="9356a720" class="cell" data-execution_count="2">
-<div class="cell-output cell-output-stdout">
-<pre><code>| session   |   anat |   dwi |   eeg |   fmap |   func |   motion |   mrs |
-|:----------|-------:|------:|------:|-------:|-------:|---------:|------:|
-| ses-V02   |    546 |   483 |     0 |    508 |    513 |      497 |   302 |
-| ses-V03   |     75 |    63 |    81 |     71 |     71 |       82 |    38 |</code></pre>
 </div>
 </div>
 </section>
@@ -238,8 +313,8 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://docs.abcdstudy.org/latest/documentation/curation/structure.html">Data Structure</a></li>
 <li><a href="https://abcd.deapscience.com/#/my-datasets/create-dataset">Data Dictionary (DEAP)</a></li>
 </ul>
-<section id="section-1" class="level3">
-<h3 class="anchored" data-anchor-id="section-1">6.0</h3>
+<section id="section-2" class="level3">
+<h3 class="anchored" data-anchor-id="section-2">6.0</h3>
 <p>Citation</p>
 <pre><code>@misc{https://doi.org/10.82525/jy7n-g441,
   doi = {10.82525/JY7N-G441},
@@ -273,12 +348,12 @@ ul.task-list li input[type="checkbox"] {
         └── substance_use
             └── tlfb
 </code></pre>
-<div id="a061f2bb" class="cell" data-execution_count="3">
+<div id="ca1416ef" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-stdout">
 <pre><code>Total Subjects: 11868</code></pre>
 </div>
 </div>
-<div id="7c6e5680" class="cell" data-execution_count="4">
+<div id="42a75886" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-stdout">
 <pre><code>| session   |   beh |
 |:----------|------:|
