@@ -83,6 +83,9 @@ Note: these are opinions. They're best-practice-informed opinions, but still opi
 :::
 
 
+notes:
+python -m ipykernel install --user --name $CONDA_DEFAULT_ENV
+
 
 
 [^1]: Many doomed projects also begin with semi-rigorous data structures.

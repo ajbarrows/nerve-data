@@ -105,7 +105,5 @@ if __name__ == "__main__":
                     and replaced with symlinks.""")
 
 
-
-    
     args = parser.parse_args()
     sync_with_symlinks(args.dir1, args.dir2, args.dry_run, args.output)
