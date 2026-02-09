@@ -1,6 +1,6 @@
 # Tools for data management
 
-## make_symlinks.py
+## sync_directories.py
 
 CLI to compare directories `source` and `target`:
 

@@ -36,9 +36,16 @@ Citation
 
 Structure:
 
+
+:::{.callout-warning title="Update 2025-11-14"}
+We have identified some additional differences between the 1.0 and 1.1 phenotype data.
+:::
+
 ::: {.callout-caution}
 See [release notes](https://docs.hbcdstudy.org/latest/changelog/releasenotes/#version-r11) for changes from HBCD 1.0.
 :::
+
+
 
 ```
 HBCD/1.1/
@@ -256,6 +263,8 @@ HBCD/1.0/
 
 
 ### 6.0
+
+[Release Notes](https://docs.abcdstudy.org/latest/documentation/release_notes/6_0.html)
 
 Citation
 
