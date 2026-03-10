@@ -4,6 +4,12 @@ project:
   #   - "*.qmd"
   #   - "!index.qmd"
 
+jupyter:
+  kernelspec:
+    name: nervedata
+    language: python
+    display_name: "nervedata"
+
 website:
   title: "NERVE Lab Data Management"
   navbar:

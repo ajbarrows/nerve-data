@@ -1,0 +1,33 @@
+[project]
+name = "nervedata"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "duckdb>=1.4.4",
+    "nbconvert>=7.17.0",
+    "notebook>=7.5.4",
+    "nibabel>=5.0.0",
+    "pandas>=3.0.1",
+    "pip>=26.0.1",
+    "pyarrow>=23.0.1",
+    "tabulate>=0.10.0",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.2.0",
+    "nervedata",
+]
+
+[tool.setuptools]
+packages = ["nervedata"]
+
+[tool.uv.workspace]
+members = [
+    ".",
+]
+
+[tool.uv.sources]
+nervedata = { workspace = true, editable = true }

@@ -5,10 +5,18 @@ HBCD/*
 !HBCD/.gitkeep
 !.gitignore
 
-code/notebooks/
+IMAGEN/*
+!IMAGEN/.gitkeep
+
+notebooks/
 
 quarto/_site
 quarto/figures/
 quarto/scratch
 
 *__pycache*
+
+.venv
+.claude
+nervedata.egg-info/
+plans/

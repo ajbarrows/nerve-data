@@ -5,96 +5,7 @@ execute:
 ---
 
 ```{python}
-import os
-import pandas as pd
-from pathlib import Path
-from collections import defaultdict
-
-
-def scan_bids_directory(bids_dir, default_ses='ses-01'):
-    """
-    Scan a BIDS directory and return a DataFrame with subject-session combinations
-    and imaging modality indicators.
-    
-    Parameters:
-    -----------
-    bids_dir : str or Path
-        Path to the BIDS directory
-    
-    Returns:
-    --------
-    pd.DataFrame
-        DataFrame where each row is a subject-session combination and each column
-        is a boolean indicator for imaging modalities (anat, dwi, fmap, func, motion, mrs)
-    """
-    bids_path = Path(bids_dir)
-    
-    # Define modalities to look for
-    modalities = ['anat', 'dwi', 'fmap', 'func', 'motion', 'mrs', 'eeg', 'beh']
-    
-    # List to store data
-    data = []
-    
-    # Iterate through subjects
-    for subject_dir in bids_path.glob('sub-*'):
-        if not subject_dir.is_dir():
-            continue
-            
-        subject_id = subject_dir.name
-        
-        # Check for session directories
-        session_dirs = list(subject_dir.glob('ses-*'))
-        
-        if session_dirs:
-            # Multi-session dataset
-            for session_dir in session_dirs:
-                if not session_dir.is_dir():
-                    continue
-                    
-                session_id = session_dir.name
-                row = {'subject': subject_id, 'session': session_id}
-                
-                # Check each modality
-                for modality in modalities:
-                    modality_dir = session_dir / modality
-                    row[modality] = modality_dir.exists() and any(modality_dir.iterdir())
-                
-                data.append(row)
-        else:
-            # Single-session dataset (no ses- directories)
-            row = {'subject': subject_id, 'session': default_ses}  # Default session name
-            
-            # Check each modality directly under subject
-            for modality in modalities:
-                modality_dir = subject_dir / modality
-                row[modality] = modality_dir.exists() and any(modality_dir.iterdir())
-            
-            data.append(row)
-    
-    # Convert to DataFrame
-    df = pd.DataFrame(data)
-    
-    # Sort by subject and session
-    df = df.sort_values(['subject', 'session']).reset_index(drop=True)
-
-    summary_table = (
-        df
-        .set_index('subject')
-        .melt(id_vars='session')
-        .groupby('variable')
-        .value_counts()
-        .reset_index()
-        .query("value")
-        .pivot(
-            index='session',
-            columns='variable',
-            values='count'
-        )
-        .fillna(0)
-        .astype('int')
-    )
-
-    return df, summary_table, df['subject'].nunique()
+from nervedata.bids_scanner import BIDSDataset
 ```
 
 Current path for UVM VACC users: `/users/a/j/ajbarrow/scratch/data`
@@ -103,7 +14,6 @@ Datasets are all [BIDS](https://bids.neuroimaging.io) compliant (at least in str
 with one notable exception: `.parquet` files are included in addition to `.tsv` files
 where appropriate.
 
-All data come from the [NBCD Data Hub](https://www.nbdc-datahub.org).
 
 ## [ABCD](https://abcdstudy.org)
 
@@ -163,14 +73,15 @@ ABCD/6.1/
 ```
 
 ```{python}
-df, summary_table, n_subjects = scan_bids_directory("../ABCD/6.1/dairc/rawdata/")
+abcd = BIDSDataset("../ABCD/6.1/dairc/rawdata")
+abcd.scan()
 
-print(f"Total Subjects: {n_subjects}")
+print(f"Subjects: {abcd.n_subjects}")
 ```
 
 
 ```{python}
-print(summary_table.to_markdown())
+print(abcd.summary.to_markdown())
 ```
 
 
@@ -254,11 +165,20 @@ HBCD/2.0/
 ```
 
 
+
+
 ```{python}
-# df, summary_table, n_subjects = scan_bids_directory("../HBCD/2.0/rawdata/")
-# print(f"Total Subjects: {n_subjects}")
-# print(summary_table.to_markdown())
+hbcd = BIDSDataset("../HBCD/2.0/rawdata")
+hbcd.scan()
+
+print(f"Number of Subjects: {hbcd.n_subjects}")
 ```
+
+
+```{python}
+print(hbcd.summary.to_markdown())
+```
+
 
 
 ### 1.1
@@ -311,15 +231,6 @@ HBCD/1.1/
     |__ symri/
     |__ xcp_d/
 ```
-
-
-
-```{python}
-df, summary_table, n_subjects = scan_bids_directory("../HBCD/1.1/rawdata/")
-print(f"Total Subjects: {n_subjects}")
-print(summary_table.to_markdown())
-```
-
 
 
 ### 1.0
@@ -382,4 +293,68 @@ HBCD/1.0/
 ```
 
 :::
+
+## [IMAGEN](https://www.imagen-project.org/the-imagen-dataset)
+
+
+```
+IMAGEN/
+├── 2.7
+    ├── BL
+    │   ├── cantab
+    │   ├── dawba
+    │   ├── genomics
+    │   ├── geolocation
+    │   ├── imaging
+    │   ├── meta_data
+    │   └── psytools
+    ├── FU1
+    │   ├── dawba
+    │   ├── geolocation
+    │   ├── imaging
+    │   └── psytools
+    ├── FU2
+    │   ├── cantab
+    │   ├── dawba
+    │   ├── genomics
+    │   ├── geolocation
+    │   ├── imaging
+    │   ├── meta_data
+    │   └── psytools
+    └── FU3
+        ├── cantab
+        ├── dawba
+        ├── genomics
+        ├── geolocation
+        ├── imaging
+        ├── meta_data
+        ├── participants
+        └── psytools
+```
+
+Additionally, this structure has been converted to BIDS format. Note: NIFTI files are renamed and symlinked to original data.
+
+```
+├── bids
+│   ├── dataset_description.json
+│   ├── participants.json
+│   ├── participants.tsv
+│   ├── README
+│   ├── sub-{...}
+|   |  ...
+```
+
+```{python}
+imagen = BIDSDataset("../IMAGEN/bids/")
+imagen.scan()
+
+print(f"Number of Subjects: {imagen.n_subjects}")
+```
+
+
+```{python}
+print(imagen.summary.to_markdown())
+```
+
+
 
