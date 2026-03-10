@@ -133,6 +133,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3">1.1</a></li>
   <li><a href="#section-4" id="toc-section-4" class="nav-link" data-scroll-target="#section-4">1.0</a></li>
   </ul></li>
+  <li><a href="#imagen" id="toc-imagen" class="nav-link" data-scroll-target="#imagen">IMAGEN</a></li>
   </ul>
 </nav>
     </div>
@@ -160,7 +161,6 @@ ul.task-list li input[type="checkbox"] {
 
 <p>Current path for UVM VACC users: <code>/users/a/j/ajbarrow/scratch/data</code></p>
 <p>Datasets are all <a href="https://bids.neuroimaging.io">BIDS</a> compliant (at least in structure), with one notable exception: <code>.parquet</code> files are included in addition to <code>.tsv</code> files where appropriate.</p>
-<p>All data come from the <a href="https://www.nbdc-datahub.org">NBCD Data Hub</a>.</p>
 <section id="abcd" class="level2">
 <h2 class="anchored" data-anchor-id="abcd"><a href="https://abcdstudy.org">ABCD</a></h2>
 <ul>
@@ -209,12 +209,12 @@ ul.task-list li input[type="checkbox"] {
         └── substance_use
             └── tlfb
 </code></pre>
-<div id="96e3f581" class="cell" data-execution_count="2">
+<div id="b65a60c7" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-stdout">
-<pre><code>Total Subjects: 11425</code></pre>
+<pre><code>Subjects: 11425</code></pre>
 </div>
 </div>
-<div id="f63cc419" class="cell" data-execution_count="3">
+<div id="ae6abe95" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-stdout">
 <pre><code>| session   |   func |
 |:----------|-------:|
@@ -310,6 +310,17 @@ Caution
         |__ &lt;instrument_name&gt;.*
     ├── sub-&lt;label&gt;
     ├── sub-&lt;label&gt;</code></pre>
+<div id="c9e56f04" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-stdout">
+<pre><code>Number of Subjects: 1385</code></pre>
+</div>
+</div>
+<div id="5baeba34" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-stdout">
+<pre><code>| session   |
+|-----------|</code></pre>
+</div>
+</div>
 </section>
 <section id="section-3" class="level3">
 <h3 class="anchored" data-anchor-id="section-3">1.1</h3>
@@ -365,15 +376,6 @@ Caution
     |__ qsirecon/
     |__ symri/
     |__ xcp_d/</code></pre>
-<div id="e98a5342" class="cell" data-execution_count="5">
-<div class="cell-output cell-output-stdout">
-<pre><code>Total Subjects: 602
-| session   |   anat |   dwi |   eeg |   fmap |   func |   motion |   mrs |
-|:----------|-------:|------:|------:|-------:|-------:|---------:|------:|
-| ses-V02   |    546 |   483 |     0 |    508 |    513 |      497 |   302 |
-| ses-V03   |     75 |    63 |    81 |     71 |     71 |       82 |    38 |</code></pre>
-</div>
-</div>
 </section>
 <section id="section-4" class="level3">
 <h3 class="anchored" data-anchor-id="section-4">1.0</h3>
@@ -439,9 +441,66 @@ Caution
 </div>
 </div>
 </div>
-
-
 </section>
+</section>
+<section id="imagen" class="level2">
+<h2 class="anchored" data-anchor-id="imagen"><a href="https://www.imagen-project.org/the-imagen-dataset">IMAGEN</a></h2>
+<pre><code>IMAGEN/
+├── 2.7
+    ├── BL
+    │   ├── cantab
+    │   ├── dawba
+    │   ├── genomics
+    │   ├── geolocation
+    │   ├── imaging
+    │   ├── meta_data
+    │   └── psytools
+    ├── FU1
+    │   ├── dawba
+    │   ├── geolocation
+    │   ├── imaging
+    │   └── psytools
+    ├── FU2
+    │   ├── cantab
+    │   ├── dawba
+    │   ├── genomics
+    │   ├── geolocation
+    │   ├── imaging
+    │   ├── meta_data
+    │   └── psytools
+    └── FU3
+        ├── cantab
+        ├── dawba
+        ├── genomics
+        ├── geolocation
+        ├── imaging
+        ├── meta_data
+        ├── participants
+        └── psytools</code></pre>
+<p>Additionally, this structure has been converted to BIDS format. Note: NIFTI files are renamed and symlinked to original data.</p>
+<pre><code>├── bids
+│&nbsp;&nbsp; ├── dataset_description.json
+│&nbsp;&nbsp; ├── participants.json
+│&nbsp;&nbsp; ├── participants.tsv
+│&nbsp;&nbsp; ├── README
+│&nbsp;&nbsp; ├── sub-{...}
+|   |  ...</code></pre>
+<div id="9962d4f5" class="cell" data-execution_count="6">
+<div class="cell-output cell-output-stdout">
+<pre><code>Number of Subjects: 2152</code></pre>
+</div>
+</div>
+<div id="457e7fe0" class="cell" data-execution_count="7">
+<div class="cell-output cell-output-stdout">
+<pre><code>| session   |   anat |   dwi |   fmap |   func |
+|:----------|-------:|------:|-------:|-------:|
+| ses-BL    |   2112 |  1861 |   1955 |   2117 |
+| ses-FU2   |   1422 |  1411 |   1394 |   1422 |
+| ses-FU3   |   1181 |  1162 |   1040 |   1181 |</code></pre>
+</div>
+</div>
+
+
 </section>
 
 </main> <!-- /main -->
