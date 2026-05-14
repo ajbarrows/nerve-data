@@ -125,13 +125,13 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#abcd" id="toc-abcd" class="nav-link active" data-scroll-target="#abcd">ABCD</a>
   <ul class="collapse">
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">6.1</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">7.0</a></li>
   </ul></li>
   <li><a href="#hbcd" id="toc-hbcd" class="nav-link" data-scroll-target="#hbcd">HBCD</a>
   <ul class="collapse">
-  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2">2.0</a></li>
-  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3">1.1</a></li>
-  <li><a href="#section-4" id="toc-section-4" class="nav-link" data-scroll-target="#section-4">1.0</a></li>
+  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3">2.0</a></li>
+  <li><a href="#section-4" id="toc-section-4" class="nav-link" data-scroll-target="#section-4">1.1</a></li>
+  <li><a href="#section-5" id="toc-section-5" class="nav-link" data-scroll-target="#section-5">1.0</a></li>
   </ul></li>
   <li><a href="#imagen" id="toc-imagen" class="nav-link" data-scroll-target="#imagen">IMAGEN</a></li>
   </ul>
@@ -169,7 +169,48 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://abcd.deapscience.com/#/my-datasets/create-dataset">Data Dictionary (DEAP)</a></li>
 </ul>
 <section id="section" class="level3">
-<h3 class="anchored" data-anchor-id="section">6.1</h3>
+<h3 class="anchored" data-anchor-id="section">7.0</h3>
+<p>Current path for UVM VACC users: <code>/users/a/j/ajbarrow/scratch/data/abcd/7.0/</code></p>
+<p><strong>Release Notes</strong>: Not available yet.</p>
+<p><a href="https://doi.org/10.82525/ab4q-qr87">Citation: https://doi.org/10.82525/ab4q-qr87</a></p>
+<ul>
+<li>We only maintain a subset of available ABCD data due to storage constraints. Please get in touch if there is information you’re missing.</li>
+</ul>
+<pre><code>ABCD/7.0/
+    dairc
+    └── rawdata
+        ├── phenotype
+        │   ├── &lt;table_name&gt;.json
+        │   ├── &lt;table_name&gt;.parquet
+        │   └── ...
+        ├── sub-&lt;participant&gt;
+        │   ├── ses-&lt;event&gt;
+        │   └── ...
+        ├── ...
+        ├── dataset_description.json
+        ├── participants.json
+        ├── participants.tsv
+        ├── scans.json
+        ├── sessions.json
+        ├── task-&lt;experiment&gt;_beh.json
+        └── ...
+    └── concat
+        └── substance_use
+            └── tlfb
+</code></pre>
+<div class="callout callout-style-simple callout-note callout-titled" title="6.1">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+6.1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<section id="section-1" class="level3 callout-body-container callout-body">
+<h3 class="anchored" data-anchor-id="section-1">6.1</h3>
 <p><a href="https://docs.abcdstudy.org/latest/documentation/release_notes/6_1.html">Release Notes</a></p>
 <p><a href="https://doi.org/10.82525/ab4q-qr87">Citation: https://doi.org/10.82525/ab4q-qr87</a></p>
 <p>Notes:</p>
@@ -209,12 +250,15 @@ ul.task-list li input[type="checkbox"] {
         └── substance_use
             └── tlfb
 </code></pre>
-<div id="b65a60c7" class="cell" data-execution_count="2">
+</section>
+</div>
+</div>
+<div id="ac431ee2" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-stdout">
 <pre><code>Subjects: 11425</code></pre>
 </div>
 </div>
-<div id="ae6abe95" class="cell" data-execution_count="3">
+<div id="a22013cc" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-stdout">
 <pre><code>| session   |   func |
 |:----------|-------:|
@@ -225,7 +269,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout callout-style-simple callout-note callout-titled" title="6.0">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -234,9 +278,9 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<section id="section-1" class="level3 callout-body-container callout-body">
-<h3 class="anchored" data-anchor-id="section-1">6.0</h3>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<section id="section-2" class="level3 callout-body-container callout-body">
+<h3 class="anchored" data-anchor-id="section-2">6.0</h3>
 <p><a href="https://docs.abcdstudy.org/latest/documentation/release_notes/6_0.html">Release Notes</a></p>
 <p>Citation</p>
 <pre><code>@misc{https://doi.org/10.82525/jy7n-g441,
@@ -284,8 +328,8 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://pubmed.ncbi.nlm.nih.gov/39098249/">Volkow et al.&nbsp;(2024)</a></li>
 <li><a href="https://www.sciencedirect.com/special-issue/10VNSS1BBLV">Developmental Cognitive Neuroscience Special Issue</a></li>
 </ul>
-<section id="section-2" class="level3">
-<h3 class="anchored" data-anchor-id="section-2">2.0</h3>
+<section id="section-3" class="level3">
+<h3 class="anchored" data-anchor-id="section-3">2.0</h3>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -310,20 +354,20 @@ Caution
         |__ &lt;instrument_name&gt;.*
     ├── sub-&lt;label&gt;
     ├── sub-&lt;label&gt;</code></pre>
-<div id="c9e56f04" class="cell" data-execution_count="4">
+<div id="9d266f81" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-stdout">
 <pre><code>Number of Subjects: 1385</code></pre>
 </div>
 </div>
-<div id="5baeba34" class="cell" data-execution_count="5">
+<div id="78ba95e8" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-stdout">
 <pre><code>| session   |
 |-----------|</code></pre>
 </div>
 </div>
 </section>
-<section id="section-3" class="level3">
-<h3 class="anchored" data-anchor-id="section-3">1.1</h3>
+<section id="section-4" class="level3">
+<h3 class="anchored" data-anchor-id="section-4">1.1</h3>
 <p><a href="https://doi.org/10.82525/mb85-d528">Citation: https://doi.org/10.82525/mb85-d528</a></p>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -377,10 +421,10 @@ Caution
     |__ symri/
     |__ xcp_d/</code></pre>
 </section>
-<section id="section-4" class="level3">
-<h3 class="anchored" data-anchor-id="section-4">1.0</h3>
+<section id="section-5" class="level3">
+<h3 class="anchored" data-anchor-id="section-5">1.0</h3>
 <div class="callout callout-style-simple callout-note callout-titled" title="1.0">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -389,7 +433,7 @@ Caution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Citation:</p>
 <pre><code>@misc{https://doi.org/10.82525/qv5x-qx11,
@@ -485,12 +529,12 @@ Caution
 │&nbsp;&nbsp; ├── README
 │&nbsp;&nbsp; ├── sub-{...}
 |   |  ...</code></pre>
-<div id="9962d4f5" class="cell" data-execution_count="6">
+<div id="22e1dbf7" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-stdout">
 <pre><code>Number of Subjects: 2152</code></pre>
 </div>
 </div>
-<div id="457e7fe0" class="cell" data-execution_count="7">
+<div id="66071af4" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-stdout">
 <pre><code>| session   |   anat |   dwi |   fmap |   func |
 |:----------|-------:|------:|-------:|-------:|
