@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ajbarrows.github.io/nerve-data/index.html</loc>
-    <lastmod>2026-05-14T18:59:58.426Z</lastmod>
+    <lastmod>2026-07-14T14:36:02.461Z</lastmod>
   </url>
   <url>
     <loc>https://ajbarrows.github.io/nerve-data/guide.html</loc>
@@ -15,6 +15,10 @@
   <url>
     <loc>https://ajbarrows.github.io/nerve-data/starting_projects.html</loc>
     <lastmod>2026-02-09T17:36:29.570Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ajbarrows.github.io/nerve-data/data_storage_costs.html</loc>
+    <lastmod>2026-07-14T14:53:52.816Z</lastmod>
   </url>
   <url>
     <loc>https://ajbarrows.github.io/nerve-data/using_git.html</loc>

@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "NERVE Lab Data Management",
     "section": "",
-    "text": "Current path for UVM VACC users: /users/a/j/ajbarrow/scratch/data\nDatasets are all BIDS compliant (at least in structure), with one notable exception: .parquet files are included in addition to .tsv files where appropriate."
+    "text": "Current path for UVM VACC users: /users/a/j/ajbarrow/scratch/data\nDatasets are all BIDS compliant (at least in structure), with one notable exception: .parquet files are included in addition to .tsv files where appropriate.\nData Storage Cost Estimates"
   },
   {
     "objectID": "index.html#abcd",
@@ -96,6 +96,27 @@
       "Reproducible Analysis",
       "Starting a Project"
     ]
+  },
+  {
+    "objectID": "data_storage_costs.html",
+    "href": "data_storage_costs.html",
+    "title": "Data Storage Cost Estimates",
+    "section": "",
+    "text": "Assume UVM Netfiles cost of $160/TB per 5-year period."
+  },
+  {
+    "objectID": "data_storage_costs.html#abcd-7.0-release",
+    "href": "data_storage_costs.html#abcd-7.0-release",
+    "title": "Data Storage Cost Estimates",
+    "section": "ABCD 7.0 Release",
+    "text": "ABCD 7.0 Release\n\n\n\nType\nGrouping\nSize (GB)\n5-yr Cost\n\n\n\n\nraw\nanat\n761\n\n\n\nraw\nbeh\n8\n\n\n\nraw\ndwi\n4,640\n\n\n\nraw\nfmap\n573\n\n\n\nraw\nfunc\n56,000\n\n\n\nraw subtotal\n\n61,982\n$9,917.12\n\n\nderivatives\nfreesurfer\n8,954\n\n\n\nderivatives\nmproc-anat\n2,280\n\n\n\nderivatives\nmproc-dwi\n16,000\n\n\n\nderivatives\nmproc-func\n178,000\n\n\n\nderivatives subtotal\n\n205,234\n$32,837.44\n\n\nsource\nanat\n1,722\n\n\n\nsource\nbeh\n11\n\n\n\nsource\ndwi\n5,243\n\n\n\nsource\nfmap\n876\n\n\n\nsource\nfunc\n67,000\n\n\n\nsource\nmrs\n2\n\n\n\nsource subtotal\n\n74,854\n$11,976.64\n\n\ntabulated\nall\n39\n\n\n\ntabulated subtotal\n\n39\n$6.24\n\n\nconcat\ngenetics\n9,522\n\n\n\nconcat\nimaging\n9,813\n\n\n\nconcat\nsubstudies\n1\n\n\n\nconcat\nnovel_technologies\n116\n\n\n\nconcat\nlinked_external\n10\n\n\n\nconcat\nsubstance_use\n0\n\n\n\nconcat subtotal\n\n19,462\n$3,113.94\n\n\nGrand total\n\n361,571\n$57,851.38"
+  },
+  {
+    "objectID": "data_storage_costs.html#hbcd-2.0-release",
+    "href": "data_storage_costs.html#hbcd-2.0-release",
+    "title": "Data Storage Cost Estimates",
+    "section": "HBCD 2.0 Release",
+    "text": "HBCD 2.0 Release\n\n\n\nType\nGrouping\nSize (GB)\n5-yr Cost\n\n\n\n\nraw\nanat\n131\n\n\n\nraw\ndwi\n347\n\n\n\nraw\neeg\n1,170\n\n\n\nraw\nfmap\n22\n\n\n\nraw\nfunc\n1,151\n\n\n\nraw\nmotion\n3,389\n\n\n\nraw\nmrs\n297\n\n\n\nraw subtotal\n\n6,507\n$1,041.12\n\n\nderivatives\nbibsnet\n4\n\n\n\nderivatives\nbme_x\n122\n\n\n\nderivatives\nfreesurfer\n609\n\n\n\nderivatives\nhbcd_motion\n2,038\n\n\n\nderivatives\nmade\n3,082\n\n\n\nderivatives\nmcribs\n2,589\n\n\n\nderivatives\nmriqc\n95\n\n\n\nderivatives\nnibabies\n12,000\n\n\n\nderivatives\nosprey\n217\n\n\n\nderivatives\nqmri_postproc\n95\n\n\n\nderivatives\nqsiprep\n1,239\n\n\n\nderivatives\nqsirecon\n959\n\n\n\nderivatives\nsymri\n10,102\n\n\n\nderivatives\nxcp_d\n3,150\n\n\n\nderivatives subtotal\n\n36,301\n$5,808.21\n\n\ntabular\nall\n4\n\n\n\ntabular subtotal\n\n4\n$0.58\n\n\nconcat\ngenetics\n0\n\n\n\nconcat\ngeocoding\n0\n\n\n\nconcat\nstudy_navigator\n0\n\n\n\nconcat subtotal\n\n0\n$0.07\n\n\nGrand total\n\n42,812\n$6,849.97"
   },
   {
     "objectID": "using_git.html",
