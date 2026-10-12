@@ -129,9 +129,10 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#hbcd" id="toc-hbcd" class="nav-link" data-scroll-target="#hbcd">HBCD</a>
   <ul class="collapse">
-  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3">2.0</a></li>
-  <li><a href="#section-4" id="toc-section-4" class="nav-link" data-scroll-target="#section-4">1.1</a></li>
-  <li><a href="#section-5" id="toc-section-5" class="nav-link" data-scroll-target="#section-5">1.0</a></li>
+  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3">2.1</a></li>
+  <li><a href="#section-4" id="toc-section-4" class="nav-link" data-scroll-target="#section-4">2.0</a></li>
+  <li><a href="#section-5" id="toc-section-5" class="nav-link" data-scroll-target="#section-5">1.1</a></li>
+  <li><a href="#section-6" id="toc-section-6" class="nav-link" data-scroll-target="#section-6">1.0</a></li>
   </ul></li>
   <li><a href="#imagen" id="toc-imagen" class="nav-link" data-scroll-target="#imagen">IMAGEN</a></li>
   </ul>
@@ -315,7 +316,46 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://www.sciencedirect.com/special-issue/10VNSS1BBLV">Developmental Cognitive Neuroscience Special Issue</a></li>
 </ul>
 <section id="section-3" class="level3">
-<h3 class="anchored" data-anchor-id="section-3">2.0</h3>
+<h3 class="anchored" data-anchor-id="section-3">2.1</h3>
+<p><a href="https://doi.org/10.82525/zk84-vc08">Citation: https://doi.org/10.82525/zk84-vc08</a></p>
+<p>[Release notes: https://docs.hbcdstudy.org/latest/changelog/release-notes/] (https://docs.hbcdstudy.org/latest/changelog/release-notes/)</p>
+<p>Structure:</p>
+<pre><code>HBCD/2.1/
+     derivatives
+    &nbsp; └── made
+     rawdata/
+        phenotype/     # Tabulated Data (demographics, visit info, behavior, etc.)
+        |   |__ par_visit_data.*
+        |   |__ sed_basic_demographics.*
+        |__ &lt;instrument_name&gt;.*
+    ├── sub-&lt;label&gt;
+    ├── sub-&lt;label&gt;</code></pre>
+<div id="5e010749" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-stdout">
+<pre><code>Number of Subjects: 1301</code></pre>
+</div>
+</div>
+<div id="8d0ae04f" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-stdout">
+<pre><code>| session   |
+|-----------|</code></pre>
+</div>
+</div>
+</section>
+<section id="section-4" class="level3">
+<h3 class="anchored" data-anchor-id="section-4">2.0</h3>
+<div class="callout callout-style-simple callout-note callout-titled" title="2.0">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+2.0
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -340,20 +380,24 @@ Caution
         |__ &lt;instrument_name&gt;.*
     ├── sub-&lt;label&gt;
     ├── sub-&lt;label&gt;</code></pre>
-<div id="3ca2d93c" class="cell" data-execution_count="4">
-<div class="cell-output cell-output-stdout">
-<pre><code>Number of Subjects: 1385</code></pre>
 </div>
-</div>
-<div id="422fcca8" class="cell" data-execution_count="5">
-<div class="cell-output cell-output-stdout">
-<pre><code>| session   |
-|-----------|</code></pre>
 </div>
 </div>
 </section>
-<section id="section-4" class="level3">
-<h3 class="anchored" data-anchor-id="section-4">1.1</h3>
+<section id="section-5" class="level3">
+<h3 class="anchored" data-anchor-id="section-5">1.1</h3>
+<div class="callout callout-style-simple callout-note callout-titled" title="1.1">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+1.1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p><a href="https://doi.org/10.82525/mb85-d528">Citation: https://doi.org/10.82525/mb85-d528</a></p>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -406,11 +450,14 @@ Caution
     |__ qsirecon/
     |__ symri/
     |__ xcp_d/</code></pre>
+</div>
+</div>
+</div>
 </section>
-<section id="section-5" class="level3">
-<h3 class="anchored" data-anchor-id="section-5">1.0</h3>
+<section id="section-6" class="level3">
+<h3 class="anchored" data-anchor-id="section-6">1.0</h3>
 <div class="callout callout-style-simple callout-note callout-titled" title="1.0">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -419,7 +466,7 @@ Caution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Citation:</p>
 <pre><code>@misc{https://doi.org/10.82525/qv5x-qx11,
@@ -515,12 +562,12 @@ Caution
 │&nbsp;&nbsp; ├── README
 │&nbsp;&nbsp; ├── sub-{...}
 |   |  ...</code></pre>
-<div id="c20d88a1" class="cell" data-execution_count="6">
+<div id="c5fbc622" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-stdout">
 <pre><code>Number of Subjects: 2152</code></pre>
 </div>
 </div>
-<div id="d47a8a6b" class="cell" data-execution_count="7">
+<div id="5d36b63f" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-stdout">
 <pre><code>| session   |   anat |   dwi |   fmap |   func |
 |:----------|-------:|------:|-------:|-------:|
