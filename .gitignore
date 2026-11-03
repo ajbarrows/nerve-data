@@ -13,6 +13,7 @@ notebooks/
 quarto/_site
 quarto/figures/
 quarto/scratch
+quarto/.vdoc.*
 
 *__pycache*
 
@@ -20,3 +21,12 @@ quarto/scratch
 .claude
 nervedata.egg-info/
 plans/
+
+*tmp*
+scratch/
+
+# specific decisions
+quarto/data_storage_costs.qmd
+quarto/tables
+
+

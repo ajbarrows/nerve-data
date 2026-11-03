@@ -8,7 +8,7 @@ class BIDSDataset:
     to report subject/session/modality coverage.
     """
 
-    MODALITIES = ['anat', 'dwi', 'fmap', 'func', 'motion', 'mrs']
+    MODALITIES = ['anat', 'dwi', 'fmap', 'func', 'motion', 'mrs', 'made']
 
     def __init__(self, bids_dir: str | Path, modalities: list[str] | None = None):
         self.bids_dir = Path(bids_dir)

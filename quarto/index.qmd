@@ -14,6 +14,8 @@ Datasets are all [BIDS](https://bids.neuroimaging.io) compliant (at least in str
 with one notable exception: `.parquet` files are included in addition to `.tsv` files
 where appropriate.
 
+[Data Storage Cost Estimates](data_storage_costs.qmd)
+
 
 ## [ABCD](https://abcdstudy.org)
 
@@ -22,6 +24,44 @@ where appropriate.
 - [Data Dictionary (DEAP)](https://abcd.deapscience.com/#/my-datasets/create-dataset)
 
 
+### 7.0
+
+Current path for UVM VACC users: `/users/a/j/ajbarrow/scratch/data/abcd/7.0/`
+
+**Release Notes**: Not available yet.
+
+[Citation: https://doi.org/10.82525/ab4q-qr87](https://doi.org/10.82525/ab4q-qr87)
+
+- We only maintain a subset of available ABCD data due to storage constraints.
+Please get in touch if there is information you're missing.
+
+```
+ABCD/7.0/
+    dairc
+    └── rawdata
+        ├── phenotype
+        │   ├── <table_name>.json
+        │   ├── <table_name>.parquet
+        │   └── ...
+        ├── sub-<participant>
+        │   ├── ses-<event>
+        │   └── ...
+        ├── ...
+        ├── dataset_description.json
+        ├── participants.json
+        ├── participants.tsv
+        ├── scans.json
+        ├── sessions.json
+        ├── task-<experiment>_beh.json
+        └── ...
+    └── concat
+        └── substance_use
+            └── tlfb
+
+```
+
+
+::: {.callout-note collapse="true" title="6.1" appearance="simple"}
 ### 6.1
 
 [Release Notes](https://docs.abcdstudy.org/latest/documentation/release_notes/6_1.html)
@@ -71,17 +111,19 @@ ABCD/6.1/
             └── tlfb
 
 ```
+:::
+
 
 ```{python}
-abcd = BIDSDataset("../ABCD/6.1/dairc/rawdata")
-abcd.scan()
+# abcd = BIDSDataset("../ABCD/6.1/dairc/rawdata")
+# abcd.scan()
 
-print(f"Subjects: {abcd.n_subjects}")
+# print(f"Subjects: {abcd.n_subjects}")
 ```
 
 
 ```{python}
-print(abcd.summary.to_markdown())
+# print(abcd.summary.to_markdown())
 ```
 
 
@@ -143,7 +185,43 @@ ABCD/6.0/
 - [Developmental Cognitive Neuroscience Special Issue](https://www.sciencedirect.com/special-issue/10VNSS1BBLV)
 
 
+### 2.1
+
+
+[Citation: https://doi.org/10.82525/zk84-vc08](https://doi.org/10.82525/zk84-vc08)
+
+[Release notes: https://docs.hbcdstudy.org/latest/changelog/release-notes/] (https://docs.hbcdstudy.org/latest/changelog/release-notes/)
+
+Structure:
+
+```
+HBCD/2.1/
+     derivatives
+      └── made
+     rawdata/
+        phenotype/     # Tabulated Data (demographics, visit info, behavior, etc.)
+        |   |__ par_visit_data.*
+        |   |__ sed_basic_demographics.*
+        |__ <instrument_name>.*
+    ├── sub-<label>
+    ├── sub-<label>
+```
+
+```{python}
+hbcd = BIDSDataset("../HBCD/2.1/derivatives/made")
+hbcd.scan()
+
+print(f"Number of Subjects: {hbcd.n_subjects}")
+```
+
+
+```{python}
+print(hbcd.summary.to_markdown())
+```
+
 ### 2.0
+
+::: {.callout-note collapse="true" title="2.0" appearance="simple"}
 
 ::: {.callout-caution}
 The 2.0 release is relatively large. Since we currently have space constraints, I'll download things as needed. The HBCD 1.1 and 1.0 releases are available entirely (both tabular and file-based data).
@@ -164,24 +242,11 @@ HBCD/2.0/
     ├── sub-<label>
 ```
 
-
-
-
-```{python}
-hbcd = BIDSDataset("../HBCD/2.0/rawdata")
-hbcd.scan()
-
-print(f"Number of Subjects: {hbcd.n_subjects}")
-```
-
-
-```{python}
-print(hbcd.summary.to_markdown())
-```
-
-
+:::
 
 ### 1.1
+
+::: {.callout-note collapse="true" title="1.1" appearance="simple"}
 
 [Citation: https://doi.org/10.82525/mb85-d528](https://doi.org/10.82525/mb85-d528)
 
@@ -232,6 +297,7 @@ HBCD/1.1/
     |__ xcp_d/
 ```
 
+:::
 
 ### 1.0
 

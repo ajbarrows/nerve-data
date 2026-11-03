@@ -15,6 +15,10 @@ dependencies = [
     "tabulate>=0.10.0",
 ]
 
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
 [dependency-groups]
 dev = [
     "ipykernel>=7.2.0",
